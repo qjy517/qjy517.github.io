@@ -483,7 +483,27 @@ loc(ai)=loc(a1)+(i-1)*c，通过此式子，每个数据元素都能用一个式
         
         <guid>https://qjy517.github.io/p/myfirstblog/</guid>
         <description>&lt;h3 id=&#34;hello-world&#34;&gt;Hello world
-&lt;/h3&gt;&lt;p&gt;你好&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132141259.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;284475&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132142781.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;v2-3ea27cfac51e3cb2254f070f4cc6e7aa_r&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;你好&lt;/p&gt;
 </description>
         </item>
         <item>
