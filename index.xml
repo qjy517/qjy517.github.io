@@ -477,33 +477,40 @@ loc(ai)=loc(a1)+(i-1)*c，通过此式子，每个数据元素都能用一个式
         <description></description>
         </item>
         <item>
-        <title>MyfirstBlog</title>
-        <link>https://qjy517.github.io/p/myfirstblog/</link>
+        <title>图床搭建的注意事项</title>
+        <link>https://qjy517.github.io/p/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
         <pubDate>Thu, 08 May 2025 16:56:18 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/myfirstblog/</guid>
-        <description>&lt;h3 id=&#34;hello-world&#34;&gt;Hello world
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132141259.jpg&#34;
+        <guid>https://qjy517.github.io/p/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+        <description>&lt;h1 id=&#34;图床搭建&#34;&gt;图床搭建
+&lt;/h1&gt;&lt;h2 id=&#34;选用阿里云来搭建图床&#34;&gt;选用阿里云来搭建图床
+&lt;/h2&gt;&lt;p&gt;注意：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;OSS是这么算收费的。9元一年的包是给存储费用的，和流量费用没关系
+oss收费：存储的费用 + 外网流出的费用 + 上传免费，而购买oss资源包（40G/9元/年）只是对存储费用的抵扣，还需要再付费外网流程费用&lt;/li&gt;
+&lt;li&gt;我选用的就是9元的存储包，外网浏览额外计费，只是有了每年40G的云存储，但个人博客浏览量不大，可以忽略，注意这是支付宝每年自动扣费的，可退订，且扣费是在阿里云账户不是支付宝账户&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;有关picgo配置&#34;&gt;有关picgo配置
+&lt;/h2&gt;&lt;p&gt;在picgo设置中，可以开启自定义文件名，有关的可以网上搜索&lt;/p&gt;
+&lt;h2 id=&#34;关于typora的图像设置&#34;&gt;关于typora的图像设置
+&lt;/h2&gt;&lt;p&gt;如图如果在插入图片这三个选项栏，第一个必须，重点是第二个不勾选代表则是对已经上传到阿里云的图片，不会再次上传，会将重复的图片链接显示红色&lt;/p&gt;
+&lt;p&gt;实例：像正常上传一个图片
+&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132233881.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;284475&#34;
-	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132142781.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;v2-3ea27cfac51e3cb2254f070f4cc6e7aa_r&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;你好&lt;/p&gt;
+&lt;p&gt;再次上传会变红：
+&lt;a class=&#34;link&#34; href=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132233881.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132233881.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但如果开启第二个，则不会变红，会重复上传这个照片到阿里云&lt;/p&gt;
+&lt;h2 id=&#34;参考的部署链接&#34;&gt;参考的部署链接
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;[Typora&amp;#43;PicGo&amp;#43;%e9%98%bf%e9%87%8c%e4%ba%91OSS%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%e5%9b%be%e5%ba%8a%ef%bc%88%e8%b6%85%e8%af%a6%e7%bb%86%ef%bc%89-CSDN%e5%8d%9a%e5%ae%a2]%28https://blog.csdn.net/muxuen/article/details/122441469%29&#34; &gt;链接1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[链接2](&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/linxc008/article/details/145922550&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;搭建图床存储个人文件_typora gopic-CSDN博客&lt;/a&gt;)&lt;/p&gt;
 </description>
         </item>
         <item>

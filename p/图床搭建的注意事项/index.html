@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Hello world 你好\n">
-<title>MyfirstBlog</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="图床搭建 选用阿里云来搭建图床 注意：\nOSS是这么算收费的。9元一年的包是给存储费用的，和流量费用没关系 oss收费：存储的费用 + 外网流出的费用 + 上传免费，而购买oss资源包（40G/9元/年）只是对存储费用的抵扣，还需要再付费外网流程费用 我选用的就是9元的存储包，外网浏览额外计费，只是有了每年40G的云存储，但个人博客浏览量不大，可以忽略，注意这是支付宝每年自动扣费的，可退订，且扣费是在阿里云账户不是支付宝账户 有关picgo配置 在picgo设置中，可以开启自定义文件名，有关的可以网上搜索\n">
+<title>图床搭建的注意事项</title>
 
-<link rel='canonical' href='https://qjy517.github.io/p/myfirstblog/'>
+<link rel='canonical' href='https://qjy517.github.io/p/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/'>
 
-<link rel="stylesheet" href="/scss/style.min.51fa7d2ced21d170db6ebd3b26a89a189a640392624468190e36431edb935b7f.css"><meta property='og:title' content="MyfirstBlog">
-<meta property='og:description' content="Hello world 你好\n">
-<meta property='og:url' content='https://qjy517.github.io/p/myfirstblog/'>
+<link rel="stylesheet" href="/scss/style.min.796866bf3c38218f65dd6e38450a0f85e0e493128526638ea3f4d96ab6f11c1e.css"><meta property='og:title' content="图床搭建的注意事项">
+<meta property='og:description' content="图床搭建 选用阿里云来搭建图床 注意：\nOSS是这么算收费的。9元一年的包是给存储费用的，和流量费用没关系 oss收费：存储的费用 + 外网流出的费用 + 上传免费，而购买oss资源包（40G/9元/年）只是对存储费用的抵扣，还需要再付费外网流程费用 我选用的就是9元的存储包，外网浏览额外计费，只是有了每年40G的云存储，但个人博客浏览量不大，可以忽略，注意这是支付宝每年自动扣费的，可退订，且扣费是在阿里云账户不是支付宝账户 有关picgo配置 在picgo设置中，可以开启自定义文件名，有关的可以网上搜索\n">
+<meta property='og:url' content='https://qjy517.github.io/p/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/'>
 <meta property='og:site_name' content='请加油-qjy'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-08T16:56:18&#43;08:00'/><meta property='article:modified_time' content='2025-05-08T16:56:18&#43;08:00'/>
-<meta name="twitter:title" content="MyfirstBlog">
-<meta name="twitter:description" content="Hello world 你好\n">
+<meta name="twitter:title" content="图床搭建的注意事项">
+<meta name="twitter:description" content="图床搭建 选用阿里云来搭建图床 注意：\nOSS是这么算收费的。9元一年的包是给存储费用的，和流量费用没关系 oss收费：存储的费用 + 外网流出的费用 + 上传免费，而购买oss资源包（40G/9元/年）只是对存储费用的抵扣，还需要再付费外网流程费用 我选用的就是9元的存储包，外网浏览额外计费，只是有了每年40G的云存储，但个人博客浏览量不大，可以忽略，注意这是支付宝每年自动扣费的，可退订，且扣费是在阿里云账户不是支付宝账户 有关picgo配置 在picgo设置中，可以开启自定义文件名，有关的可以网上搜索\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -284,11 +284,10 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
-      <ol>
-        <li><a href="#hello-world">Hello world</a></li>
-      </ol>
-    </li>
+    <li><a href="#选用阿里云来搭建图床">选用阿里云来搭建图床</a></li>
+    <li><a href="#有关picgo配置">有关picgo配置</a></li>
+    <li><a href="#关于typora的图像设置">关于typora的图像设置</a></li>
+    <li><a href="#参考的部署链接">参考的部署链接</a></li>
   </ol>
 </nav>
         </div>
@@ -308,7 +307,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/myfirstblog/">MyfirstBlog</a>
+            <a href="/p/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">图床搭建的注意事项</a>
         </h2>
     
         
@@ -346,28 +345,35 @@
     <section class="article-content">
     
     
-    <h3 id="hello-world">Hello world
-</h3><p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132141259.jpg"
+    <h1 id="图床搭建">图床搭建
+</h1><h2 id="选用阿里云来搭建图床">选用阿里云来搭建图床
+</h2><p>注意：</p>
+<ol>
+<li>OSS是这么算收费的。9元一年的包是给存储费用的，和流量费用没关系
+oss收费：存储的费用 + 外网流出的费用 + 上传免费，而购买oss资源包（40G/9元/年）只是对存储费用的抵扣，还需要再付费外网流程费用</li>
+<li>我选用的就是9元的存储包，外网浏览额外计费，只是有了每年40G的云存储，但个人博客浏览量不大，可以忽略，注意这是支付宝每年自动扣费的，可退订，且扣费是在阿里云账户不是支付宝账户</li>
+</ol>
+<h2 id="有关picgo配置">有关picgo配置
+</h2><p>在picgo设置中，可以开启自定义文件名，有关的可以网上搜索</p>
+<h2 id="关于typora的图像设置">关于typora的图像设置
+</h2><p>如图如果在插入图片这三个选项栏，第一个必须，重点是第二个不勾选代表则是对已经上传到阿里云的图片，不会再次上传，会将重复的图片链接显示红色</p>
+<p>实例：像正常上传一个图片
+<img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132233881.png"
 	
 	
 	
 	loading="lazy"
 	
-		alt="284475"
-	
 	
 ></p>
-<p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132142781.jpg"
-	
-	
-	
-	loading="lazy"
-	
-		alt="v2-3ea27cfac51e3cb2254f070f4cc6e7aa_r"
-	
-	
-></p>
-<p>你好</p>
+<p>再次上传会变红：
+<a class="link" href="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132233881.png"  target="_blank" rel="noopener"
+    >https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202505132233881.png</a></p>
+<p>但如果开启第二个，则不会变红，会重复上传这个照片到阿里云</p>
+<h2 id="参考的部署链接">参考的部署链接
+</h2><p><a class="link" href="[Typora&#43;PicGo&#43;%e9%98%bf%e9%87%8c%e4%ba%91OSS%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%e5%9b%be%e5%ba%8a%ef%bc%88%e8%b6%85%e8%af%a6%e7%bb%86%ef%bc%89-CSDN%e5%8d%9a%e5%ae%a2]%28https://blog.csdn.net/muxuen/article/details/122441469%29" >链接1</a></p>
+<p>[链接2](<a class="link" href="https://blog.csdn.net/linxc008/article/details/145922550"  target="_blank" rel="noopener"
+    >搭建图床存储个人文件_typora gopic-CSDN博客</a>)</p>
 
 </section>
 
