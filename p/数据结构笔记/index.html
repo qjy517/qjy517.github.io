@@ -398,6 +398,7 @@
           <ol>
             <li><a href="#前序遍历">前序遍历</a></li>
             <li><a href="#中序遍历">中序遍历</a></li>
+            <li><a href="#后序遍历">后序遍历</a></li>
           </ol>
         </li>
       </ol>
@@ -2296,8 +2297,48 @@ loc(ai)=loc(a1)+(i-1)*c，通过此式子，每个数据元素都能用一个式
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="中序遍历">中序遍历
-</h4><p>同样由根节点开始（但不访问只是借助他来访问左叶节点）</p>
-
+</h4><p>同样由根节点开始（但不访问只是借助他来访问左叶节点），即从左叶节点开始打印</p>
+<p>即对每个节点，先打印它的左孩子，再打印他自己，最后打印右孩子</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Miorder</span><span class="p">(</span><span class="n">Tree</span> <span class="n">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">Miorder</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">l</span><span class="o">-</span><span class="n">child</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">Miorder</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">r</span><span class="o">-</span><span class="n">child</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="后序遍历">后序遍历
+</h4><p>根节点是最后打印的，先遍历左树，再右树最后根节点</p>
+<p>即对每个节点先打印它的孩子，最后打印自己</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Laorder</span><span class="p">(</span><span class="n">Tree</span> <span class="n">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">Laorder</span> <span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">l</span><span class="o">-</span><span class="n">child</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">Laorder</span> <span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">r</span><span class="o">-</span><span class="n">child</span><span class="p">);;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
