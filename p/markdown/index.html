@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="markdown语法练习 关于文本的操作 换行 这是第一段文字，首先是文本换行也就是软换行可以用shift键加上回车 这就是文本换行\n段落换行就是一次回车\n斜体 收尾加上星号表示斜体\n加粗 收尾加上两个星号表示加粗\n">
+<title>Markdown</title>
+
+<link rel='canonical' href='https://qjy517.github.io/p/markdown/'>
+
+<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="Markdown">
+<meta property='og:description' content="markdown语法练习 关于文本的操作 换行 这是第一段文字，首先是文本换行也就是软换行可以用shift键加上回车 这就是文本换行\n段落换行就是一次回车\n斜体 收尾加上星号表示斜体\n加粗 收尾加上两个星号表示加粗\n">
+<meta property='og:url' content='https://qjy517.github.io/p/markdown/'>
+<meta property='og:site_name' content='请加油-qjy'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-11T16:24:58&#43;08:00'/><meta property='article:modified_time' content='2025-05-11T16:24:58&#43;08:00'/>
+<meta name="twitter:title" content="Markdown">
+<meta name="twitter:description" content="markdown语法练习 关于文本的操作 换行 这是第一段文字，首先是文本换行也就是软换行可以用shift键加上回车 这就是文本换行\n段落换行就是一次回车\n斜体 收尾加上星号表示斜体\n加粗 收尾加上两个星号表示加粗\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_b2233702304bd991.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🫡</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">请加油-qjy</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://wx.mail.qq.com/home/index'
+                        target="_blank"
+                        title="qq mail"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://qjy517.github.io/en/" >English</option>
+                                
+                                    <option value="https://qjy517.github.io/" selected>简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#关于文本的操作">关于文本的操作</a>
+      <ol>
+        <li><a href="#换行">换行</a></li>
+        <li><a href="#斜体">斜体</a></li>
+        <li><a href="#加粗">加粗</a></li>
+        <li><a href="#既要斜体也要加粗">既要斜体也要加粗</a></li>
+        <li><a href="#删除线">删除线</a></li>
+        <li><a href="#分割线">分割线</a></li>
+      </ol>
+    </li>
+    <li><a href="#列表">列表</a>
+      <ol>
+        <li><a href="#无序列表">无序列表</a></li>
+        <li><a href="#有序列表">有序列表</a></li>
+        <li><a href="#列表平行">列表平行</a></li>
+        <li><a href="#列表嵌套">列表嵌套</a></li>
+        <li><a href="#列表项目打钩">列表项目打钩</a></li>
+      </ol>
+    </li>
+    <li><a href="#代码块">代码块</a></li>
+    <li><a href="#声明一个引用">声明一个引用</a>
+      <ol>
+        <li><a href="#引用嵌套">引用嵌套</a></li>
+      </ol>
+    </li>
+    <li><a href="#超链接">超链接</a></li>
+    <li><a href="#角注">角注</a></li>
+    <li><a href="#图片插入">图片插入</a></li>
+    <li><a href="#表格插入">表格插入</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/markdown/">Markdown</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-05-11</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="markdown语法练习">markdown语法练习
+</h1><h2 id="关于文本的操作">关于文本的操作
+</h2><h3 id="换行">换行
+</h3><p>这是第一段文字，首先是文本换行也就是软换行可以用shift键加上回车
+这就是文本换行</p>
+<p>段落换行就是一次回车</p>
+<h3 id="斜体">斜体
+</h3><p><em>收尾加上星号表示斜体</em></p>
+<h3 id="加粗">加粗
+</h3><p><strong>收尾加上两个星号表示加粗</strong></p>
+<h3 id="既要斜体也要加粗">既要斜体也要加粗
+</h3><p><em><strong>就是三个星号</strong></em></p>
+<h3 id="删除线">删除线
+</h3><p><del>文本首尾加两个波浪线</del></p>
+<h3 id="分割线">分割线
+</h3><p>在两个文本之间加上三个星号</p>
+<p>用于两个段落之间，实例：</p>
+<p>段落一</p>
+<hr>
+<p>段落二</p>
+<h2 id="列表">列表
+</h2><h3 id="无序列表">无序列表
+</h3><ul>
+<li>
+<p>第一排</p>
+<p>在列表内换行，用文本内换行</p>
+</li>
+<li>
+<p>第二排</p>
+</li>
+<li>
+<p>第三排</p>
+</li>
+</ul>
+<p>两个回车会退出列表</p>
+<h3 id="有序列表">有序列表
+</h3><p>同习惯一样，数字加小数点加空格</p>
+<ol>
+<li>第一排</li>
+<li>第二排</li>
+</ol>
+<h3 id="列表平行">列表平行
+</h3><p>只能在两个列表之间用一个完整的行分开才行，或者直接按上下左右的有方向键</p>
+<ol>
+<li></li>
+<li>此时按右方向键就时新的一行</li>
+</ol>
+<h3 id="列表嵌套">列表嵌套
+</h3><p>只需遵循对应的语法就行</p>
+<ol>
+<li></li>
+<li>
+<ul>
+<li></li>
+</ul>
+</li>
+</ol>
+<h3 id="列表项目打钩">列表项目打钩
+</h3><ol>
+<li>勾选框：在原有的星号空格后面打上中括号，中间有一个空格，后面再加上一个空格</li>
+<li>打钩：将中括号里面的空格替换为x</li>
+</ol>
+<p>实例：</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> 这是勾选框</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> 这是勾选之后的样式</p>
+</li>
+</ul>
+<h2 id="代码块">代码块
+</h2><p>常用三个`生成一个代码块</p>
+<p>显示代码语言：在三个`后面加上语言名称如c，Java</p>
+<p>行内代码块：首尾一个`就行</p>
+<p>实例：</p>
+<ol>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"> <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span> <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span> <span class="kt">void</span> <span class="nf">hanoi</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="kt">char</span> <span class="n">F</span><span class="p">,</span><span class="kt">char</span> <span class="n">E</span><span class="p">,</span><span class="kt">char</span> <span class="n">T</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> <span class="kt">void</span> <span class="nf">move</span><span class="p">(</span><span class="kt">char</span> <span class="n">F</span><span class="p">,</span><span class="kt">char</span> <span class="n">E</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Input the number of disks:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Steps of moving %d disks from A to C by means of B:</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="sc">&#39;C&#39;</span><span class="p">,</span><span class="sc">&#39;B&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="kt">void</span> <span class="nf">hanoi</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="kt">char</span> <span class="n">F</span><span class="p">,</span><span class="kt">char</span> <span class="n">E</span><span class="p">,</span><span class="kt">char</span> <span class="n">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="p">{</span>
+</span></span><span class="line"><span class="cl">         <span class="nf">move</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">E</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">     <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">//后面三个语句要用{}括起来，因为不括起来，在基准问题即n=1，执行完之后
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//不会返回到上一个主调函数，会继续运行hanoi
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//还要注意，这里递归调用hanoi的参数应为主调函数的F,E,T,不是&#39;A&#39;&#39;B&#39;&#39;C&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>     <span class="k">else</span>
+</span></span><span class="line"><span class="cl">     <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">E</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">move</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">E</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">F</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">     <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="kt">void</span> <span class="nf">move</span><span class="p">(</span><span class="kt">char</span> <span class="n">F</span><span class="p">,</span><span class="kt">char</span> <span class="n">E</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%c-&gt;%c</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">E</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>行内代码块<code> printf</code></p>
+</li>
+</ol>
+<h2 id="声明一个引用">声明一个引用
+</h2><p>一个&gt;加空格在加上引用的文本，同样的换行条件，同样可以在引用文本框内嵌套 列表，代码等块，只需对应的语法，还可以嵌套本身，退出仍是两个回车，软换行还是shift键加回车</p>
+<blockquote>
+<p>高尔基曾说过：书籍是人类进步的阶梯</p></blockquote>
+<h3 id="引用嵌套">引用嵌套
+</h3><blockquote>
+<p>这是汉诺塔代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">void</span> <span class="nf">hanoi</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="kt">char</span> <span class="n">F</span><span class="p">,</span><span class="kt">char</span> <span class="n">E</span><span class="p">,</span><span class="kt">char</span> <span class="n">T</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">move</span><span class="p">(</span><span class="kt">char</span> <span class="n">F</span><span class="p">,</span><span class="kt">char</span> <span class="n">E</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"> <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Input the number of disks:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Steps of moving %d disks from A to C by means of B:</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="sc">&#39;C&#39;</span><span class="p">,</span><span class="sc">&#39;B&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">hanoi</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="kt">char</span> <span class="n">F</span><span class="p">,</span><span class="kt">char</span> <span class="n">E</span><span class="p">,</span><span class="kt">char</span> <span class="n">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">move</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">E</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">E</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">move</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">E</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">hanoi</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">F</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">move</span><span class="p">(</span><span class="kt">char</span> <span class="n">F</span><span class="p">,</span><span class="kt">char</span> <span class="n">E</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%c-&gt;%c</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">E</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h2 id="超链接">超链接
+</h2><p>中括号里面写内容，空格再加上小括号里面写网址
+进阶：用变量名表示网址：段落换行后，写出变量对应的地址,注意冒号后空一格</p>
+<p>这是 <a class="link" href="https://www.baidu.com"  target="_blank" rel="noopener"
+    >百度</a> 的链接，如果多次使用同一个链接，可以用变量名表示网址</p>
+<p>实例：这是<a class="link" href="a" >百度</a>,这也是<a class="link" href="a" >百度</a>。</p>
+<h2 id="角注">角注
+</h2><p>[^数字]，然后同上定义角注内容</p>
+<p>实例：</p>
+<p>百度<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h2 id="图片插入">图片插入
+</h2><p>一个![可写可不写]再加上一个(图片地址，可网络可本地)，但大小不可调，有个<a class="link" href="https://sm.ms/"  target="_blank" rel="noopener"
+    >网址</a>可以配置图床，以及搜一下typora怎么配置自动上传</p>
+<h2 id="表格插入">表格插入
+</h2><p>|表示表格边框
+表格内容对区方式：用:控制，两边都加上表示居中，只加一边表示偏向一侧</p>
+<p>实例：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">姓名</th>
+          <th style="text-align: center">年龄</th>
+          <th style="text-align: center">性别</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">小红</td>
+          <td style="text-align: center">14</td>
+          <td style="text-align: center">女</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>我是角注&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 请加油-qjy
+    </section>
+    
+    <section class="powerby">
+        
+            12024242196@qq.com <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
