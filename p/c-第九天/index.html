@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="每日一练 求取最大公约数与最小公倍数 辗转相除法，就是用较大数除以较小数，然后再用除数除以余数，再用除数除以余数，直至余数为0；\n最小公倍数就是其乘积除以最大公约数\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 #include &lt;iostream&gt; using namespace std; int Result(int a,int b); int main() { int a,int b; cin&gt;&gt;a&gt;&gt;b; cout&lt;&lt;&#34;最大公约数是：&#34;&lt;&lt;Result(a,b)&lt;&lt;endl; cout&lt;&lt;&#34;最小公倍数是：&#34;&lt;&lt;a*b/Result(a,b)&lt;&lt;endl; return 0; } int Result(int a,int b) { if(b==0) { return 0; } else { return Result(b,a%b); } } 递归求aaaaa 法一：递归\n">
-<title>每日一练7 29</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="类的声明 在创建类的对象之前，我们一定要先完成对类的定义。并且类成员本身不能够是类自己，但可以是指向类的一个指针。\n友元在探 类友元 我们可以将一个类整体声明为友元，这样本身的成员就是可见的，比如类A将类B声明为友元，那么对于B中的函数而言，就可以访问A的数据成员。\n">
+<title>C&#43;&#43;第九天</title>
 
-<link rel='canonical' href='https://qjy517.github.io/p/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%BB%837-29/'>
+<link rel='canonical' href='https://qjy517.github.io/p/c-%E7%AC%AC%E4%B9%9D%E5%A4%A9/'>
 
-<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="每日一练7 29">
-<meta property='og:description' content="每日一练 求取最大公约数与最小公倍数 辗转相除法，就是用较大数除以较小数，然后再用除数除以余数，再用除数除以余数，直至余数为0；\n最小公倍数就是其乘积除以最大公约数\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 #include &lt;iostream&gt; using namespace std; int Result(int a,int b); int main() { int a,int b; cin&gt;&gt;a&gt;&gt;b; cout&lt;&lt;&#34;最大公约数是：&#34;&lt;&lt;Result(a,b)&lt;&lt;endl; cout&lt;&lt;&#34;最小公倍数是：&#34;&lt;&lt;a*b/Result(a,b)&lt;&lt;endl; return 0; } int Result(int a,int b) { if(b==0) { return 0; } else { return Result(b,a%b); } } 递归求aaaaa 法一：递归\n">
-<meta property='og:url' content='https://qjy517.github.io/p/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%BB%837-29/'>
+<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="C++第九天">
+<meta property='og:description' content="类的声明 在创建类的对象之前，我们一定要先完成对类的定义。并且类成员本身不能够是类自己，但可以是指向类的一个指针。\n友元在探 类友元 我们可以将一个类整体声明为友元，这样本身的成员就是可见的，比如类A将类B声明为友元，那么对于B中的函数而言，就可以访问A的数据成员。\n">
+<meta property='og:url' content='https://qjy517.github.io/p/c-%E7%AC%AC%E4%B9%9D%E5%A4%A9/'>
 <meta property='og:site_name' content='请加油-qjy'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-29T22:35:07&#43;08:00'/><meta property='article:modified_time' content='2025-07-29T22:35:07&#43;08:00'/>
-<meta name="twitter:title" content="每日一练7 29">
-<meta name="twitter:description" content="每日一练 求取最大公约数与最小公倍数 辗转相除法，就是用较大数除以较小数，然后再用除数除以余数，再用除数除以余数，直至余数为0；\n最小公倍数就是其乘积除以最大公约数\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 #include &lt;iostream&gt; using namespace std; int Result(int a,int b); int main() { int a,int b; cin&gt;&gt;a&gt;&gt;b; cout&lt;&lt;&#34;最大公约数是：&#34;&lt;&lt;Result(a,b)&lt;&lt;endl; cout&lt;&lt;&#34;最小公倍数是：&#34;&lt;&lt;a*b/Result(a,b)&lt;&lt;endl; return 0; } int Result(int a,int b) { if(b==0) { return 0; } else { return Result(b,a%b); } } 递归求aaaaa 法一：递归\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-08-01T23:32:24&#43;08:00'/><meta property='article:modified_time' content='2025-08-01T23:32:24&#43;08:00'/>
+<meta name="twitter:title" content="C++第九天">
+<meta name="twitter:description" content="类的声明 在创建类的对象之前，我们一定要先完成对类的定义。并且类成员本身不能够是类自己，但可以是指向类的一个指针。\n友元在探 类友元 我们可以将一个类整体声明为友元，这样本身的成员就是可见的，比如类A将类B声明为友元，那么对于B中的函数而言，就可以访问A的数据成员。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -284,7 +284,19 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#求取最大公约数与最小公倍数">求取最大公约数与最小公倍数</a></li>
+    <li><a href="#友元在探">友元在探</a></li>
+    <li><a href="#类友元">类友元</a></li>
+    <li><a href="#另成员函数作为友元">另成员函数作为友元</a></li>
+    <li><a href="#友元声明和作用域">友元声明和作用域</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#作用域和定义在类外部的成员">作用域和定义在类外部的成员</a></li>
+    <li><a href="#名字查找与类的作用域">名字查找与类的作用域</a>
+      <ol>
+        <li><a href="#用于类成员声明的名字查找">用于类成员声明的名字查找</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -304,7 +316,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%BB%837-29/">每日一练7 29</a>
+            <a href="/p/c-%E7%AC%AC%E4%B9%9D%E5%A4%A9/">C&#43;&#43;第九天</a>
         </h2>
     
         
@@ -326,7 +338,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-07-29</time>
+                <time class="article-time--published">2025-08-01</time>
             </div>
         
 
@@ -342,10 +354,12 @@
     <section class="article-content">
     
     
-    <h1 id="每日一练">每日一练
-</h1><h2 id="求取最大公约数与最小公倍数">求取最大公约数与最小公倍数
-</h2><p>辗转相除法，就是用较大数除以较小数，然后再用除数除以余数，再用除数除以余数，直至余数为0；</p>
-<p>最小公倍数就是其乘积除以最大公约数</p>
+    <h1 id="类的声明">类的声明
+</h1><p>在创建类的对象之前，我们一定要先完成对类的定义。并且类成员本身不能够是类自己，但可以是指向类的一个指针。</p>
+<h2 id="友元在探">友元在探
+</h2><h2 id="类友元">类友元
+</h2><p>我们可以将一个类整体声明为友元，这样本身的成员就是可见的，比如类A将类B声明为友元，那么对于B中的函数而言，就可以访问A的数据成员。</p>
+<p>但是要注意友元关系并不存在传递性。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -370,34 +384,38 @@
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">Result</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Window_mgr</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="o">&gt;&gt;</span><span class="n">b</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;最大公约数是：&#34;</span><span class="o">&lt;&lt;</span><span class="n">Result</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;最小公倍数是：&#34;</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">/</span><span class="n">Result</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">using</span> <span class="n">Screen_index</span><span class="o">=</span><span class="n">string</span> <span class="o">::</span> <span class="n">size_type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">clear</span><span class="p">(</span><span class="n">Screen_index</span><span class="p">);</span><span class="c1">//只是声明，因为后续要用到Screen类但是还没定义
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span> <span class="n">screens</span><span class="p">{(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">)};</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">Result</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Screen</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="o">%</span><span class="n">b</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">using</span> <span class="n">pos</span> <span class="o">=</span><span class="n">string</span><span class="o">::</span> <span class="n">size_type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="k">class</span> <span class="nc">Window_mgr</span><span class="p">;</span><span class="c1">//将Window_mgr声明为友元类，然后可以定义clear函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Screen</span><span class="p">(</span><span class="n">pos</span> <span class="n">ht</span><span class="p">,</span><span class="n">pos</span> <span class="n">wd</span><span class="p">,</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span><span class="o">:</span> <span class="n">height</span><span class="p">(</span><span class="n">ht</span><span class="p">),</span><span class="n">width</span><span class="p">(</span><span class="n">wd</span><span class="p">),</span><span class="n">content</span><span class="p">(</span><span class="n">ht</span><span class="o">*</span><span class="n">wd</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pos</span> <span class="n">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pos</span> <span class="n">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Winddow_mgr</span><span class="o">::</span> <span class="n">clear</span><span class="p">(</span><span class="n">Screen_index</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Screen</span> <span class="o">&amp;</span><span class="n">s</span><span class="o">=</span><span class="n">screens</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">.</span><span class="n">content</span><span class="o">=</span><span class="n">string</span> <span class="p">(</span><span class="n">height</span><span class="o">*</span><span class="n">width</span><span class="p">,</span><span class="sc">&#39; &#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="递归求aaaaa">递归求aaaaa
-</h1><p>法一：递归</p>
+</div><h2 id="另成员函数作为友元">另成员函数作为友元
+</h2><p>另成员函数作为友元，我们要说明友元函数在哪个类中，并且要注意声明定义的顺序</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -425,37 +443,67 @@
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//一个函数用来求aaa，另一个函数用来求和
-</span></span></span><span class="line"><span class="cl"><span class="c1">//求aaa
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">Result</span><span class="err">（</span><span class="kt">int</span> <span class="n">a</span><span class="err">，</span><span class="kt">int</span> <span class="n">n</span><span class="err">）</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Window_mgr</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nf">Result</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">+</span><span class="n">a</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">using</span> <span class="n">Screen_index</span><span class="o">=</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;::</span><span class="n">size_type</span><span class="p">;</span><span class="c1">//size_type 是vetcor中的，所以在声明Screen之前可以使用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">clear</span><span class="p">(</span><span class="n">Screen_index</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span> <span class="n">screens</span><span class="p">{(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="sc">&#39;a&#39;</span><span class="p">)};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Screen</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">using</span> <span class="n">pos</span><span class="o">=</span><span class="n">string</span><span class="o">::</span> <span class="n">size_type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="kt">void</span> <span class="n">Window_mgr</span><span class="o">::</span><span class="n">clear</span><span class="p">(</span><span class="n">Screen_index</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Screen</span> <span class="p">(</span><span class="n">pos</span> <span class="n">ht</span><span class="p">,</span><span class="n">pos</span> <span class="n">wd</span><span class="p">,</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span><span class="o">:</span><span class="n">height</span><span class="p">(</span><span class="n">ht</span><span class="p">),</span><span class="n">width</span><span class="p">(</span><span class="n">wd</span><span class="p">),</span><span class="n">content</span><span class="p">(</span><span class="n">height</span><span class="o">*</span><span class="n">width</span><span class="p">,</span><span class="n">c</span><span class="p">){}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Screen</span><span class="p">()</span><span class="o">=</span><span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pos</span> <span class="nf">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pos</span> <span class="n">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pos</span> <span class="n">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Window_mgr</span><span class="o">::</span><span class="n">clear</span><span class="p">(</span><span class="n">Screen_index</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Screen</span> <span class="o">&amp;</span><span class="n">s</span><span class="o">=</span><span class="n">screens</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="c1">//相当于新定义一个Screen对象，然后绑定screens[i]，也就相当于赋值了。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">s</span><span class="p">.</span><span class="n">content</span><span class="o">=</span><span class="n">string</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">height</span><span class="o">*</span><span class="n">s</span><span class="p">.</span><span class="n">width</span><span class="p">,</span><span class="sc">&#39; &#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//求和
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">Sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//类的作用域问题：当我们在函数外部定义成员函数时，其类名是隐藏的，所以定义函数名之前要加上所属的类名
+</span></span></span><span class="line"><span class="cl"><span class="c1">//同样的返回类型如果也在类中的定义，那么也要说明这个返回类型是在类中，否则编译器无法识别
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Screen</span><span class="o">::</span><span class="n">pos</span> <span class="n">Screen</span><span class="o">::</span> <span class="n">size</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">a</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">Sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">Result</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">height</span><span class="o">*</span><span class="n">width</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>法二：循环</p>
-<div class="highlight"><div class="chroma">
+</div><p>其中，Screen类将Window_mgr中的clear作为友元函数，要先声明函数然后再定义</p>
+<h2 id="友元声明和作用域">友元声明和作用域
+</h2><p>理解友元声明：在类内部进行的友元函数的声明甚至是定义，都不是真正意义上的声明，只是被赋予了一定的访问权限，如果后续要想使用该函数，就必须在外部显示声明。</p>
+<h1 id="类的作用域">类的作用域
+</h1><h2 id="作用域和定义在类外部的成员">作用域和定义在类外部的成员
+</h2><p>为什么定义类成员函数时要加作用域？
+答：编译器在编译时，会将类隐藏，所以如果不加类作用域，就不知道函数名属于哪一类，就不知道，函数中的成员名字是什么意思。</p>
+<h2 id="名字查找与类的作用域">名字查找与类的作用域
+</h2><h3 id="用于类成员声明的名字查找">用于类成员声明的名字查找
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -465,70 +513,23 @@
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">sum</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//第一个函数用来求aaa
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">double</span> <span class="n">Money</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="n">bal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Account</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="n">sum</span><span class="o">+=</span><span class="n">a</span>
-</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="mi">10</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//第二个函数用来求和
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>猴子吃桃问题。猴子第一天摘下若干个桃子，当即吃了一半，还不过瘾，又多吃了一个。 第二天早上又将剩下的桃子吃掉一半，又多吃一个。以后每天早上都吃了前一天剩下的一半零一个。 到第N天早上想再吃时，见只剩下一个桃子了。求第一天共摘多少桃子。</p>
-<p>这是逆向的推理问题，我已经推到了f(i)=f(i-1)/2-1,f（1）表示第i天剩下的数量，但是不知道这么列递归，因为之前的都是n=1作为出口，而本题目是将第n天作为出口，所以单一的一个参数是不够的，要用到两个参数，而且另一个参数要从1开始，后续根据要求第一天，所以是<em>p<strong>e</strong>a<strong>c</strong>h</em>[<em>i</em>]=(<em>p<strong>e</strong>a<strong>c</strong>h</em>[<em>i</em>+1]+1)×2，递归的参数时要变大的。</p>
-<p>所以：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">Calculate</span><span class="p">(</span><span class="kt">int</span> <span class="n">day</span><span class="p">,</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">Calculate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">Calculate</span><span class="p">(</span><span class="kt">int</span> <span class="n">day</span><span class="p">,</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">day</span><span class="o">==</span><span class="n">n</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span><span class="n">Calculate</span><span class="p">(</span><span class="n">day</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">Money</span> <span class="n">balance</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">bal</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Money</span> <span class="n">bal</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><p>编译器进入类中看到money时，再此语句之间查找money，发现是double，然后，<em><strong>先不进行函数体的编译继续编译后面的语句，最后编译return bal，这个bal此时在类中就是Money bal而不是是string bal</strong></em></p>
+<p><em><strong>要注意就是避免成员函数参数使用类的数据成员名字，就是因为编译器查找名字的规则</strong></em></p>
+
 </section>
 
 
