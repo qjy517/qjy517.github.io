@@ -7,7 +7,95 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>请加油-qjy</copyright>
-        <lastBuildDate>Tue, 05 Aug 2025 20:31:37 +0800</lastBuildDate><atom:link href="https://qjy517.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 07 Aug 2025 20:33:35 +0800</lastBuildDate><atom:link href="https://qjy517.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>C&#43;&#43; 顺序容器简洁</title>
+        <link>https://qjy517.github.io/p/c-%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E7%AE%80%E6%B4%81/</link>
+        <pubDate>Thu, 07 Aug 2025 20:33:35 +0800</pubDate>
+        
+        <guid>https://qjy517.github.io/p/c-%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E7%AE%80%E6%B4%81/</guid>
+        <description>&lt;h1 id=&#34;顺序容器&#34;&gt;顺序容器
+&lt;/h1&gt;&lt;h2 id=&#34;顺序容器的分类&#34;&gt;顺序容器的分类
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;vector：可变数组，能够快速访问，在尾插入元素还行，但是中间插入麻烦&lt;/li&gt;
+&lt;li&gt;deque：双端队列，支持快速访问，在头尾插入元素很快&lt;/li&gt;
+&lt;li&gt;list：双向链表，只能够双向顺序访问，不能够随机访问，但在中间插入元素较为方便&lt;/li&gt;
+&lt;li&gt;forward_list：单项链表，只支持单向顺序访问。同样插入元素方便&lt;/li&gt;
+&lt;li&gt;array：固定大小数组，支持快速访问元素，但不支持添加或删除元素&lt;/li&gt;
+&lt;li&gt;string：与vector类似的容器，但是存的是char，随机访问快，在尾部添加元素&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;array相比较于内置数组而言更有益，后面讲解。&lt;/li&gt;
+&lt;li&gt;不知道使用什么容器时，选vector和list的公共操作，这样在后续需要更换容器，只需要修改名字即可。&lt;/li&gt;
+&lt;li&gt;要记住这几种容器的公共操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;容器操作&#34;&gt;容器操作
+&lt;/h2&gt;&lt;p&gt;都能进行的&lt;/p&gt;
+&lt;h3 id=&#34;定义在容器中的类型别名&#34;&gt;定义在容器中的类型别名
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;iterator：加上容器作用域表示指定容器的迭代器类型&lt;/li&gt;
+&lt;li&gt;const_iterator：可读但不可写的迭代器类型&lt;/li&gt;
+&lt;li&gt;size_type：无符号整数，常用来表示容器元素下标&lt;/li&gt;
+&lt;li&gt;difference_type:带符号整数，常来用来表示两个迭代器之间的距离。&lt;/li&gt;
+&lt;li&gt;value_type：统一获取容器中的元素类型&lt;/li&gt;
+&lt;li&gt;reference：与vallue_type&amp;amp;含义相同&lt;/li&gt;
+&lt;li&gt;const_reference：与const value_type&amp;amp;含义相同&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;构造函数初始化容器元素&#34;&gt;构造函数（初始化容器元素）
+&lt;/h3&gt;&lt;p&gt;大写字母表示容器类型&lt;/p&gt;
+&lt;p&gt;C   c，默认构造函数，构造空容器&lt;/p&gt;
+&lt;p&gt;C c1(c2)，拷贝c2到c1&lt;/p&gt;
+&lt;p&gt;C c1=c2,类似&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;C c(b,e)：将c初始化为迭代器b，e包围的元素&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;C c{a,b,c,&amp;hellip;..}，列表初始化&lt;/p&gt;
+&lt;h3 id=&#34;赋值和swap&#34;&gt;赋值和swap
+&lt;/h3&gt;&lt;p&gt;c1=c2&lt;/p&gt;
+&lt;p&gt;c1={a,b,c&amp;hellip;..}&lt;/p&gt;
+&lt;p&gt;swap(a,b):交换a，b的元素&lt;/p&gt;
+&lt;p&gt;assign函数&lt;/p&gt;
+&lt;h3 id=&#34;大小&#34;&gt;大小
+&lt;/h3&gt;&lt;p&gt;c.size()：c中元素的数目
+c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
+&lt;p&gt;c.empty()：c中没有元素返回true&lt;/p&gt;
+&lt;h3 id=&#34;添加删除元素不使用array&#34;&gt;添加删除元素（不使用array）
+&lt;/h3&gt;&lt;p&gt;注：不同容器接口不同&lt;/p&gt;
+&lt;p&gt;c.insert()&lt;/p&gt;
+&lt;p&gt;c.emplace()&lt;/p&gt;
+&lt;p&gt;c.erase()&lt;/p&gt;
+&lt;p&gt;c.clear()：删除c中所有元素返回void&lt;/p&gt;
+&lt;h3 id=&#34;获取迭代器&#34;&gt;获取迭代器
+&lt;/h3&gt;&lt;p&gt;c.begin()&lt;/p&gt;
+&lt;p&gt;c.end()&lt;/p&gt;
+&lt;h2 id=&#34;使用迭代器&#34;&gt;使用迭代器
+&lt;/h2&gt;&lt;p&gt;最重要的就是使用迭代器范围来确定将要使用的元素范围&lt;/p&gt;
+&lt;p&gt;还可以检查容器是否为空，检查begin==end&lt;/p&gt;
+&lt;h3 id=&#34;begin和end成员&#34;&gt;begin和end成员
+&lt;/h3&gt;&lt;p&gt;当我们定义一个iterator时，要注意如果我们定义的不是const iterator就不要使用cbegin来初始化iterator对象&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;最重要的是，通常我们用begin和end来初始化时，最好使用auto，避免繁琐也可以避免上述错误。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;容器的定义和初始化&#34;&gt;容器的定义和初始化
+&lt;/h2&gt;&lt;p&gt;要注意拷贝构造函数，要求两个容器类型相同，且保存的元素类型也相同&lt;/p&gt;
+&lt;p&gt;但是如果我们使用迭代器范围进行拷贝时，如果保存的元素类型可以默认转换，那么就可以忽略容器类型&lt;/p&gt;
+&lt;p&gt;列表初始化，使用char*时要用const&lt;/p&gt;
+&lt;h3 id=&#34;标准库array&#34;&gt;标准库array
+&lt;/h3&gt;&lt;p&gt;array的大小也是类型的一部分&lt;/p&gt;
+&lt;p&gt;比如：array&amp;lt;int,10&amp;gt;,&lt;em&gt;&lt;strong&gt;不能够对内置数组进行拷贝和赋值的操作，但是可以对array进行拷贝和赋值操作，这是array的优点，但是要确保元素类型相同，且个数相同&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;赋值和swap函数&#34;&gt;赋值和swap函数
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202508071912029.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250807191153857&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;注意区别赋值和初始化，认为赋值没有什么用&lt;/p&gt;
+&lt;p&gt;统一使用非成员版本的swap，比较好&lt;/p&gt;
+&lt;p&gt;非成员版本的 &lt;code&gt;swap&lt;/code&gt; 函数定义在 &lt;code&gt;&amp;lt;utility&amp;gt;&lt;/code&gt; 头文件中，它的参数范围比较广，可以是两个内置类型(int ),也可以是两个容器，或是两个类（关于类可以查阅一些资料）&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>C&#43;&#43;第十二天</title>
         <link>https://qjy517.github.io/p/c-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%A4%A9/</link>
         <pubDate>Tue, 05 Aug 2025 20:31:37 +0800</pubDate>
