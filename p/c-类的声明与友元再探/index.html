@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="迭代器 1. 概念 迭代器就是一个提供了一种更加通用的访问容器重元素（vector和string）的方法，迭代器类型类似于指针类型，能够间接访问容器中的对象；也是解引用的操作来获取元素的值\n">
-<title>C&#43;&#43;第三天</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="类的声明 在创建类的对象之前，我们一定要先完成对类的定义。并且类成员本身不能够是类自己，但可以是指向类的一个指针。\n友元在探 类友元 我们可以将一个类整体声明为友元，这样本身的成员就是可见的，比如类A将类B声明为友元，那么对于B中的函数而言，就可以访问A的数据成员。\n">
+<title>c&#43;&#43;类的声明与友元再探</title>
 
-<link rel='canonical' href='https://qjy517.github.io/p/c-%E7%AC%AC%E4%B8%89%E5%A4%A9/'>
+<link rel='canonical' href='https://qjy517.github.io/p/c-%E7%B1%BB%E7%9A%84%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%8F%8B%E5%85%83%E5%86%8D%E6%8E%A2/'>
 
-<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="C++第三天">
-<meta property='og:description' content="迭代器 1. 概念 迭代器就是一个提供了一种更加通用的访问容器重元素（vector和string）的方法，迭代器类型类似于指针类型，能够间接访问容器中的对象；也是解引用的操作来获取元素的值\n">
-<meta property='og:url' content='https://qjy517.github.io/p/c-%E7%AC%AC%E4%B8%89%E5%A4%A9/'>
+<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="c++类的声明与友元再探">
+<meta property='og:description' content="类的声明 在创建类的对象之前，我们一定要先完成对类的定义。并且类成员本身不能够是类自己，但可以是指向类的一个指针。\n友元在探 类友元 我们可以将一个类整体声明为友元，这样本身的成员就是可见的，比如类A将类B声明为友元，那么对于B中的函数而言，就可以访问A的数据成员。\n">
+<meta property='og:url' content='https://qjy517.github.io/p/c-%E7%B1%BB%E7%9A%84%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%8F%8B%E5%85%83%E5%86%8D%E6%8E%A2/'>
 <meta property='og:site_name' content='请加油-qjy'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-15T22:24:54&#43;08:00'/><meta property='article:modified_time' content='2025-07-15T22:24:54&#43;08:00'/>
-<meta name="twitter:title" content="C++第三天">
-<meta name="twitter:description" content="迭代器 1. 概念 迭代器就是一个提供了一种更加通用的访问容器重元素（vector和string）的方法，迭代器类型类似于指针类型，能够间接访问容器中的对象；也是解引用的操作来获取元素的值\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-08-01T23:32:24&#43;08:00'/><meta property='article:modified_time' content='2025-08-01T23:32:24&#43;08:00'/>
+<meta name="twitter:title" content="c++类的声明与友元再探">
+<meta name="twitter:description" content="类的声明 在创建类的对象之前，我们一定要先完成对类的定义。并且类成员本身不能够是类自己，但可以是指向类的一个指针。\n友元在探 类友元 我们可以将一个类整体声明为友元，这样本身的成员就是可见的，比如类A将类B声明为友元，那么对于B中的函数而言，就可以访问A的数据成员。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -284,13 +284,17 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#1-概念">1. 概念</a></li>
-    <li><a href="#2-迭代器的相关知识">2. 迭代器的相关知识</a>
+    <li><a href="#友元在探">友元在探</a></li>
+    <li><a href="#类友元">类友元</a></li>
+    <li><a href="#另成员函数作为友元">另成员函数作为友元</a></li>
+    <li><a href="#友元声明和作用域">友元声明和作用域</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#作用域和定义在类外部的成员">作用域和定义在类外部的成员</a></li>
+    <li><a href="#名字查找与类的作用域">名字查找与类的作用域</a>
       <ol>
-        <li><a href="#1使用迭代器">1.使用迭代器</a></li>
-        <li><a href="#2-迭代器运算符和类型">2. 迭代器运算符和类型</a></li>
-        <li><a href="#3-迭代器使用">3. 迭代器使用</a></li>
-        <li><a href="#4-迭代器注意事项">4. 迭代器注意事项</a></li>
+        <li><a href="#用于类成员声明的名字查找">用于类成员声明的名字查找</a></li>
       </ol>
     </li>
   </ol>
@@ -312,7 +316,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/c-%E7%AC%AC%E4%B8%89%E5%A4%A9/">C&#43;&#43;第三天</a>
+            <a href="/p/c-%E7%B1%BB%E7%9A%84%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%8F%8B%E5%85%83%E5%86%8D%E6%8E%A2/">c&#43;&#43;类的声明与友元再探</a>
         </h2>
     
         
@@ -334,7 +338,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-07-15</time>
+                <time class="article-time--published">2025-08-01</time>
             </div>
         
 
@@ -350,43 +354,13 @@
     <section class="article-content">
     
     
-    <h1 id="迭代器">迭代器
-</h1><h2 id="1-概念">1. 概念
-</h2><p>迭代器就是一个提供了一种更加通用的访问容器重元素（vector和string）的方法，迭代器类型类似于指针类型，能够间接访问容器中的对象；也是解引用的操作来获取元素的值</p>
-<p><em><strong>也就是说只要涉及到访问容器中元素的问题就都可以用迭代器</strong></em></p>
-<h2 id="2-迭代器的相关知识">2. 迭代器的相关知识
-</h2><h3 id="1使用迭代器">1.使用迭代器
-</h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">vetcot</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">i</span><span class="o">=</span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>大多数容器都会带有返回迭代器类型的的函数，如begin()和end();</p>
-<p>其中迭代器的类型属于 iterator，声明一个迭代器对象就是<code>vector&lt;int&gt;：： iterator i</code> 表示这是一个名为i的是vector<int>的迭代器</p>
-<h3 id="2-迭代器运算符和类型">2. 迭代器运算符和类型
-</h3><p>迭代器类似指针，都是能够解引用来改变自身</p>
-<ol>
-<li>*s</li>
-<li>s-&gt;men</li>
-<li>==,!=,++,&ndash;</li>
-</ol>
+    <h1 id="类的声明">类的声明
+</h1><p>在创建类的对象之前，我们一定要先完成对类的定义。并且类成员本身不能够是类自己，但可以是指向类的一个指针。</p>
+<h2 id="友元在探">友元在探
+</h2><h2 id="类友元">类友元
+</h2><p>我们可以将一个类整体声明为友元，这样本身的成员就是可见的，比如类A将类B声明为友元，那么对于B中的函数而言，就可以访问A的数据成员。</p>
+<p>但是要注意友元关系并不存在传递性。</p>
 <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">i</span><span class="o">=</span><span class="n">v1</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//cbegin表示迭代器对象只能够读取但不能够修改容器中的元素
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="3-迭代器使用">3. 迭代器使用
-</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -400,38 +374,48 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//读入几段文字，最后输出换行符之前的文字   
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">str</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span><span class="n">str</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//(*i).empty,可以简化，因为i是一个迭代器，可以用1-&gt;empty()代替
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">i</span><span class="o">=</span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">i</span><span class="o">!=</span><span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">&amp;&amp;!</span><span class="p">(</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">empty</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">cout</span><span class="o">&lt;&lt;*</span><span class="n">i</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Window_mgr</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">using</span> <span class="n">Screen_index</span><span class="o">=</span><span class="n">string</span> <span class="o">::</span> <span class="n">size_type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">clear</span><span class="p">(</span><span class="n">Screen_index</span><span class="p">);</span><span class="c1">//只是声明，因为后续要用到Screen类但是还没定义
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span> <span class="n">screens</span><span class="p">{(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="sc">&#39;c&#39;</span><span class="p">)};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Screen</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">using</span> <span class="n">pos</span> <span class="o">=</span><span class="n">string</span><span class="o">::</span> <span class="n">size_type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="k">class</span> <span class="nc">Window_mgr</span><span class="p">;</span><span class="c1">//将Window_mgr声明为友元类，然后可以定义clear函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Screen</span><span class="p">(</span><span class="n">pos</span> <span class="n">ht</span><span class="p">,</span><span class="n">pos</span> <span class="n">wd</span><span class="p">,</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span><span class="o">:</span> <span class="n">height</span><span class="p">(</span><span class="n">ht</span><span class="p">),</span><span class="n">width</span><span class="p">(</span><span class="n">wd</span><span class="p">),</span><span class="n">content</span><span class="p">(</span><span class="n">ht</span><span class="o">*</span><span class="n">wd</span><span class="p">,</span><span class="n">c</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">pos</span> <span class="n">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pos</span> <span class="n">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Winddow_mgr</span><span class="o">::</span> <span class="n">clear</span><span class="p">(</span><span class="n">Screen_index</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Screen</span> <span class="o">&amp;</span><span class="n">s</span><span class="o">=</span><span class="n">screens</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">.</span><span class="n">content</span><span class="o">=</span><span class="n">string</span> <span class="p">(</span><span class="n">height</span><span class="o">*</span><span class="n">width</span><span class="p">,</span><span class="sc">&#39; &#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="4-迭代器注意事项">4. 迭代器注意事项
-</h3><p><em><strong>使用的迭代器中的循环不能够再改变容器中的元素的个数</strong></em></p>
-<p><em><strong>声明iterato对象时，因为每个容器中都嵌套了iteator，所以使用iteator时要用作用域解析运算符指明iteator来自哪个容器</strong></em></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iterator</span> <span class="n">i</span><span class="o">=</span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="c1">//错误
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">::</span> <span class="n">ineatror</span> <span class="n">i</span><span class="o">=</span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>在使用迭代器循环时计for循环，到末尾的条件是！=而不是&lt;=</p>
-<h1 id="二分查找">二分查找
-</h1><p>使用迭代器进行二分查找，时要注意这是左闭右开的查找方式</p>
+</div><h2 id="另成员函数作为友元">另成员函数作为友元
+</h2><p>另成员函数作为友元，我们要说明友元函数在哪个类中，并且要注意声明定义的顺序</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -470,88 +454,82 @@
 </span><span class="lnt">34
 </span><span class="lnt">35
 </span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Window_mgr</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;input data:&#34;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//cin作为while条件时，用文件结束符结束读取，但会造成输入流错误，从而造成后面a读不进去
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cin</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="p">.</span><span class="n">ignore</span><span class="p">(</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="n">streamsize</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">(),</span> <span class="sc">&#39;\n&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;input the number do you want to check:&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">right</span><span class="p">,</span><span class="n">left</span><span class="p">,</span><span class="n">mid</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">left</span><span class="o">=</span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">right</span><span class="o">=</span><span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//要注意条件，mid的求法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="n">left</span><span class="o">&lt;</span><span class="n">right</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">mid</span><span class="o">=</span><span class="n">left</span><span class="o">+</span><span class="p">(</span><span class="n">right</span><span class="o">-</span><span class="n">left</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;*</span><span class="n">mid</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">right</span><span class="o">=</span><span class="n">mid</span><span class="p">;</span><span class="c1">//体现右开
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;*</span><span class="n">mid</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="n">left</span><span class="o">=</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="c1">//体现左闭
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">            <span class="k">else</span>
-</span></span><span class="line"><span class="cl">            <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="o">==*</span><span class="n">mid</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;find it&#34;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;not found&#34;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">using</span> <span class="n">Screen_index</span><span class="o">=</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;::</span><span class="n">size_type</span><span class="p">;</span><span class="c1">//size_type 是vetcor中的，所以在声明Screen之前可以使用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">clear</span><span class="p">(</span><span class="n">Screen_index</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Screen</span><span class="o">&gt;</span> <span class="n">screens</span><span class="p">{(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="sc">&#39;a&#39;</span><span class="p">)};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Screen</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">using</span> <span class="n">pos</span><span class="o">=</span><span class="n">string</span><span class="o">::</span> <span class="n">size_type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="kt">void</span> <span class="n">Window_mgr</span><span class="o">::</span><span class="n">clear</span><span class="p">(</span><span class="n">Screen_index</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Screen</span> <span class="p">(</span><span class="n">pos</span> <span class="n">ht</span><span class="p">,</span><span class="n">pos</span> <span class="n">wd</span><span class="p">,</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span><span class="o">:</span><span class="n">height</span><span class="p">(</span><span class="n">ht</span><span class="p">),</span><span class="n">width</span><span class="p">(</span><span class="n">wd</span><span class="p">),</span><span class="n">content</span><span class="p">(</span><span class="n">height</span><span class="o">*</span><span class="n">width</span><span class="p">,</span><span class="n">c</span><span class="p">){}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Screen</span><span class="p">()</span><span class="o">=</span><span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pos</span> <span class="nf">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pos</span> <span class="n">height</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pos</span> <span class="n">width</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">content</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Window_mgr</span><span class="o">::</span><span class="n">clear</span><span class="p">(</span><span class="n">Screen_index</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Screen</span> <span class="o">&amp;</span><span class="n">s</span><span class="o">=</span><span class="n">screens</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="c1">//相当于新定义一个Screen对象，然后绑定screens[i]，也就相当于赋值了。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">s</span><span class="p">.</span><span class="n">content</span><span class="o">=</span><span class="n">string</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">height</span><span class="o">*</span><span class="n">s</span><span class="p">.</span><span class="n">width</span><span class="p">,</span><span class="sc">&#39; &#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//类的作用域问题：当我们在函数外部定义成员函数时，其类名是隐藏的，所以定义函数名之前要加上所属的类名
+</span></span></span><span class="line"><span class="cl"><span class="c1">//同样的返回类型如果也在类中的定义，那么也要说明这个返回类型是在类中，否则编译器无法识别
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Screen</span><span class="o">::</span><span class="n">pos</span> <span class="n">Screen</span><span class="o">::</span> <span class="n">size</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">height</span><span class="o">*</span><span class="n">width</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>cin作为while条件时，用文件结束符结束读取，但会造成输入流错误，从而造成后面a读不进去</strong></p>
-<div class="highlight"><div class="chroma">
+</div><p>其中，Screen类将Window_mgr中的clear作为友元函数，要先声明函数然后再定义</p>
+<h2 id="友元声明和作用域">友元声明和作用域
+</h2><p>理解友元声明：在类内部进行的友元函数的声明甚至是定义，都不是真正意义上的声明，只是被赋予了一定的访问权限，如果后续要想使用该函数，就必须在外部显示声明。</p>
+<h1 id="类的作用域">类的作用域
+</h1><h2 id="作用域和定义在类外部的成员">作用域和定义在类外部的成员
+</h2><p>为什么定义类成员函数时要加作用域？
+答：编译器在编译时，会将类隐藏，所以如果不加类作用域，就不知道函数名属于哪一类，就不知道，函数中的成员名字是什么意思。</p>
+<h2 id="名字查找与类的作用域">名字查找与类的作用域
+</h2><h3 id="用于类成员声明的名字查找">用于类成员声明的名字查找
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl">    <span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">a</span><span class="o">/</span><span class="mi">10</span><span class="p">))</span><span class="o">++</span><span class="p">;</span><span class="c1">//理解优先级++优先级比*高,错误：*（i+a/10)++,表示的是迭代器先++再解引用
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">double</span> <span class="n">Money</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="n">bal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Account</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">Money</span> <span class="n">balance</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">bal</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Money</span> <span class="n">bal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><p>编译器进入类中看到money时，再此语句之间查找money，发现是double，然后，<em><strong>先不进行函数体的编译继续编译后面的语句，最后编译return bal，这个bal此时在类中就是Money bal而不是是string bal</strong></em></p>
+<p><em><strong>要注意就是避免成员函数参数使用类的数据成员名字，就是因为编译器查找名字的规则</strong></em></p>
+
 </section>
 
 

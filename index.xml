@@ -485,11 +485,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>C&#43;&#43;第十二天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%A4%A9/</link>
+        <title>c&#43;&#43;文件流</title>
+        <link>https://qjy517.github.io/p/c-%E6%96%87%E4%BB%B6%E6%B5%81/</link>
         <pubDate>Tue, 05 Aug 2025 20:31:37 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E6%96%87%E4%BB%B6%E6%B5%81/</guid>
         <description>&lt;h1 id=&#34;文件流对象&#34;&gt;文件流对象
 &lt;/h1&gt;&lt;h2 id=&#34;1fstream分类&#34;&gt;1.fstream分类
 &lt;/h2&gt;&lt;p&gt;首先要知道文件流已有三种类型，分别为ifstream，ofstream，fstream。其中ifstream关联的文件·就只能进行读取操作，ofstream关联的文件就只能进行写入操作，而fstream关联的对象可以通过文件模式来显示的表明是要读取还是要写入&lt;/p&gt;
@@ -1281,11 +1281,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>C&#43;&#43;第十一天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/</link>
+        <title>c&#43;&#43;初识IO</title>
+        <link>https://qjy517.github.io/p/c-%E5%88%9D%E8%AF%86io/</link>
         <pubDate>Tue, 05 Aug 2025 20:30:42 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E5%88%9D%E8%AF%86io/</guid>
         <description>&lt;h1 id=&#34;io类&#34;&gt;IO类
 &lt;/h1&gt;&lt;h2 id=&#34;分类&#34;&gt;分类
 &lt;/h2&gt;&lt;ol&gt;
@@ -1372,11 +1372,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>C&#43;&#43;第十天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E5%8D%81%E5%A4%A9/</link>
+        <title>c&#43;&#43;类：默认构造函数，constexpr，static</title>
+        <link>https://qjy517.github.io/p/c-%E7%B1%BB%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0constexprstatic/</link>
         <pubDate>Fri, 01 Aug 2025 23:32:54 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E5%8D%81%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E7%B1%BB%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0constexprstatic/</guid>
         <description>&lt;p&gt;尽量在定义构造函数时，也要定义默认构造函数。&lt;/p&gt;
 &lt;h1 id=&#34;定义一个类中数据成员是类类类型的默认构造函数&#34;&gt;定义一个类中数据成员是类类类型的默认构造函数
 &lt;/h1&gt;&lt;p&gt;就是当一个类中有 没有默认构造函数的成员时，要定义该类的默认构造函数，那就需要在构造函数的初始化列表中显式的调用这个成员的有参构造函数&lt;/p&gt;
@@ -1716,11 +1716,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>C&#43;&#43;第九天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E4%B9%9D%E5%A4%A9/</link>
+        <title>c&#43;&#43;类的声明与友元再探</title>
+        <link>https://qjy517.github.io/p/c-%E7%B1%BB%E7%9A%84%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%8F%8B%E5%85%83%E5%86%8D%E6%8E%A2/</link>
         <pubDate>Fri, 01 Aug 2025 23:32:24 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E4%B9%9D%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E7%B1%BB%E7%9A%84%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%8F%8B%E5%85%83%E5%86%8D%E6%8E%A2/</guid>
         <description>&lt;h1 id=&#34;类的声明&#34;&gt;类的声明
 &lt;/h1&gt;&lt;p&gt;在创建类的对象之前，我们一定要先完成对类的定义。并且类成员本身不能够是类自己，但可以是指向类的一个指针。&lt;/p&gt;
 &lt;h2 id=&#34;友元在探&#34;&gt;友元在探
@@ -1899,11 +1899,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>C&#43;&#43;第八天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E5%85%AB%E5%A4%A9/</link>
+        <title>c&#43;&#43;类中const 成员函数和类的其它特性</title>
+        <link>https://qjy517.github.io/p/c-%E7%B1%BB%E4%B8%ADconst-%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB%E7%9A%84%E5%85%B6%E5%AE%83%E7%89%B9%E6%80%A7/</link>
         <pubDate>Wed, 30 Jul 2025 23:13:27 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E5%85%AB%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E7%B1%BB%E4%B8%ADconst-%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB%E7%9A%84%E5%85%B6%E5%AE%83%E7%89%B9%E6%80%A7/</guid>
         <description>&lt;h1 id=&#34;const成员函数&#34;&gt;const成员函数
 &lt;/h1&gt;&lt;p&gt;目的：确保我们的this指针指向的对象的只是不会改变的，也就是具有一定的只读性，并且一个const成员函数只能调用const成员函数&lt;/p&gt;
 &lt;p&gt;形式：在参数列表后面加上const；&lt;/p&gt;
@@ -1960,7 +1960,80 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 &lt;p&gt;并且常量对象只能调用const函数，非常量对象可以用常量函数，也可以用非常量函数。但最好对应，如display。&lt;/p&gt;
  &lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202507302218010.png&#34; alt=&#34;image-20250730221834911&#34; style=&#34;zoom: 80%;&#34; /&gt;
 &lt;p&gt;这里diplay的实现在private中，提高了封装性，复用性。&lt;/p&gt;
-</description>
+&lt;h1 id=&#34;总结&#34;&gt;总结
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Person&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;func2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;//age=10;//常函数不能修改成员属性，但可以访问；
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;//因为这相当于const Person *this.age=10,this指针是const的，所以不能修改
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;调用常函数&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;func2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;这是func2&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;test01&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;p1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//普通对象可以调用常函数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Person&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//定义常对象
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;//p2.func2();//常对象不能调用普通成员函数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;test01&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>每日一练7 29</title>
@@ -2157,11 +2230,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>C&#43;&#43;第七天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E4%B8%83%E5%A4%A9/</link>
+        <title>c&#43;&#43;类初识别</title>
+        <link>https://qjy517.github.io/p/c-%E7%B1%BB%E5%88%9D%E8%AF%86%E5%88%AB/</link>
         <pubDate>Tue, 29 Jul 2025 22:30:11 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E4%B8%83%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E7%B1%BB%E5%88%9D%E8%AF%86%E5%88%AB/</guid>
         <description>&lt;h1 id=&#34;类的学习&#34;&gt;类的学习
 &lt;/h1&gt;&lt;p&gt;类的接口就是我们对类成员的一系列操作&lt;/p&gt;
 &lt;h2 id=&#34;定义成员函数&#34;&gt;定义成员函数
@@ -2197,11 +2270,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>C&#43;&#43;第六天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E5%85%AD%E5%A4%A9/</link>
+        <title>c&#43;&#43;函数的知识</title>
+        <link>https://qjy517.github.io/p/c-%E5%87%BD%E6%95%B0%E7%9A%84%E7%9F%A5%E8%AF%86/</link>
         <pubDate>Tue, 29 Jul 2025 22:20:29 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E5%85%AD%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E5%87%BD%E6%95%B0%E7%9A%84%E7%9F%A5%E8%AF%86/</guid>
         <description>&lt;h1 id=&#34;continue的用法&#34;&gt;continue的用法
 &lt;/h1&gt;&lt;p&gt;跳过当前循环，执行下一个循环&lt;/p&gt;
 &lt;p&gt;例如，可以用continue来筛选我们想要的输入&lt;/p&gt;
@@ -2395,11 +2468,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>C&#43;&#43;第五天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E4%BA%94%E5%A4%A9/</link>
+        <title>c&#43;&#43;表达式与运算符</title>
+        <link>https://qjy517.github.io/p/c-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
         <pubDate>Thu, 17 Jul 2025 21:04:26 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E4%BA%94%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
         <description>&lt;h1 id=&#34;关于vector和数组的相互拷贝&#34;&gt;关于vector和数组的相互拷贝
 &lt;/h1&gt;&lt;p&gt;不允许使用一个数组为另个数组赋初值，也不允许使用vector对象初始化数组，但是可以使用数组来初始化vector对象&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2651,11 +2724,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>C&#43;&#43;第四天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E5%9B%9B%E5%A4%A9/</link>
+        <title>c&#43;&#43;指针与数组</title>
+        <link>https://qjy517.github.io/p/c-%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84/</link>
         <pubDate>Wed, 16 Jul 2025 21:17:07 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E5%9B%9B%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E6%8C%87%E9%92%88%E4%B8%8E%E6%95%B0%E7%BB%84/</guid>
         <description>&lt;h1 id=&#34;数组&#34;&gt;数组
 &lt;/h1&gt;&lt;h2 id=&#34;1-概念&#34;&gt;1. 概念
 &lt;/h2&gt;&lt;p&gt;数组类似vector但又有一些局限性，他必须在编译时就确定了数组的大小，也就是说声明数组时要用常量表达式；&lt;/p&gt;
@@ -2809,11 +2882,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>C&#43;&#43;第三天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E4%B8%89%E5%A4%A9/</link>
+        <title>c&#43;&#43;迭代器与二分查找</title>
+        <link>https://qjy517.github.io/p/c-%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</link>
         <pubDate>Tue, 15 Jul 2025 22:24:54 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E4%B8%89%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</guid>
         <description>&lt;h1 id=&#34;迭代器&#34;&gt;迭代器
 &lt;/h1&gt;&lt;h2 id=&#34;1-概念&#34;&gt;1. 概念
 &lt;/h2&gt;&lt;p&gt;迭代器就是一个提供了一种更加通用的访问容器重元素（vector和string）的方法，迭代器类型类似于指针类型，能够间接访问容器中的对象；也是解引用的操作来获取元素的值&lt;/p&gt;
@@ -3018,11 +3091,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>C&#43;&#43;第二天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E4%BA%8C%E5%A4%A9/</link>
+        <title>c&#43;&#43; cctypedef和vector初识</title>
+        <link>https://qjy517.github.io/p/c-cctypedef%E5%92%8Cvector%E5%88%9D%E8%AF%86/</link>
         <pubDate>Mon, 14 Jul 2025 23:01:12 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E4%BA%8C%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-cctypedef%E5%92%8Cvector%E5%88%9D%E8%AF%86/</guid>
         <description>&lt;p&gt;string 对象可以想加，并且可与字符串字面值和字符字面值想加，但要保证每个+两侧至少一个是string对象&lt;/p&gt;
 &lt;h2 id=&#34;cctype中的处理string中字符的函数&#34;&gt;cctype中的处理string中字符的函数
 &lt;/h2&gt;&lt;ol&gt;
@@ -3159,11 +3232,11 @@ c.max_size()：c本身所容纳的最大元素数量&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>C&#43;&#43;第一天</title>
-        <link>https://qjy517.github.io/p/c-%E7%AC%AC%E4%B8%80%E5%A4%A9/</link>
+        <title>c&#43;&#43;基本概念</title>
+        <link>https://qjy517.github.io/p/c-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
         <pubDate>Sun, 13 Jul 2025 22:13:16 +0800</pubDate>
         
-        <guid>https://qjy517.github.io/p/c-%E7%AC%AC%E4%B8%80%E5%A4%A9/</guid>
+        <guid>https://qjy517.github.io/p/c-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
         <description>&lt;p&gt;cin语句在循环中的判断，判断的是cin本身，在cin读取到文件结束符或者是无效输入时会变为假，文件结束符是ctrl+z。&lt;/p&gt;
 &lt;p&gt;cin读取一串字符时，会省略空格；注意是一串字符；&lt;/p&gt;
 &lt;p&gt;类定义了一个类型以及预期关联的一组操作&lt;/p&gt;

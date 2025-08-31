@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="continue的用法 跳过当前循环，执行下一个循环\n例如，可以用continue来筛选我们想要的输入\n1 2 3 4 5 6 7 8 string str; while (cin&gt;&gt;str&amp;&amp;!str.empty()) { if (str[0]!=&#39;\\n&#39;) { continue; } } 只读取以n开头的单词\n函数传引用参数 传引用参数可以改变输入对象的值，并且不用&amp;，并且使用引用可以避免拷贝，只读只需要设为const就行\n">
-<title>C&#43;&#43;第六天</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="类的学习 类的接口就是我们对类成员的一系列操作\n定义成员函数 引入this 当我们调用类对象的成员函数时，编译器会将隐式指针指向调用成员函数的对象，这样我们就可以在函数体内直接使用成员对象。\n">
+<title>c&#43;&#43;类初识别</title>
 
-<link rel='canonical' href='https://qjy517.github.io/p/c-%E7%AC%AC%E5%85%AD%E5%A4%A9/'>
+<link rel='canonical' href='https://qjy517.github.io/p/c-%E7%B1%BB%E5%88%9D%E8%AF%86%E5%88%AB/'>
 
-<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="C++第六天">
-<meta property='og:description' content="continue的用法 跳过当前循环，执行下一个循环\n例如，可以用continue来筛选我们想要的输入\n1 2 3 4 5 6 7 8 string str; while (cin&gt;&gt;str&amp;&amp;!str.empty()) { if (str[0]!=&#39;\\n&#39;) { continue; } } 只读取以n开头的单词\n函数传引用参数 传引用参数可以改变输入对象的值，并且不用&amp;，并且使用引用可以避免拷贝，只读只需要设为const就行\n">
-<meta property='og:url' content='https://qjy517.github.io/p/c-%E7%AC%AC%E5%85%AD%E5%A4%A9/'>
+<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="c++类初识别">
+<meta property='og:description' content="类的学习 类的接口就是我们对类成员的一系列操作\n定义成员函数 引入this 当我们调用类对象的成员函数时，编译器会将隐式指针指向调用成员函数的对象，这样我们就可以在函数体内直接使用成员对象。\n">
+<meta property='og:url' content='https://qjy517.github.io/p/c-%E7%B1%BB%E5%88%9D%E8%AF%86%E5%88%AB/'>
 <meta property='og:site_name' content='请加油-qjy'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-29T22:20:29&#43;08:00'/><meta property='article:modified_time' content='2025-07-29T22:20:29&#43;08:00'/>
-<meta name="twitter:title" content="C++第六天">
-<meta name="twitter:description" content="continue的用法 跳过当前循环，执行下一个循环\n例如，可以用continue来筛选我们想要的输入\n1 2 3 4 5 6 7 8 string str; while (cin&gt;&gt;str&amp;&amp;!str.empty()) { if (str[0]!=&#39;\\n&#39;) { continue; } } 只读取以n开头的单词\n函数传引用参数 传引用参数可以改变输入对象的值，并且不用&amp;，并且使用引用可以避免拷贝，只读只需要设为const就行\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-29T22:30:11&#43;08:00'/><meta property='article:modified_time' content='2025-07-29T22:30:11&#43;08:00'/>
+<meta name="twitter:title" content="c++类初识别">
+<meta name="twitter:description" content="类的学习 类的接口就是我们对类成员的一系列操作\n定义成员函数 引入this 当我们调用类对象的成员函数时，编译器会将隐式指针指向调用成员函数的对象，这样我们就可以在函数体内直接使用成员对象。\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -284,8 +284,14 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#可提供的操作">可提供的操作</a></li>
-    <li><a href="#传递值的序列">传递值的序列</a></li>
+    <li><a href="#定义成员函数">定义成员函数</a>
+      <ol>
+        <li><a href="#引入this">引入this</a></li>
+        <li><a href="#const成员函数">const成员函数</a></li>
+        <li><a href="#在类外部定义成员函数">在类外部定义成员函数</a></li>
+        <li><a href="#定义一个返回this对象的函数">定义一个返回this对象的函数</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -305,7 +311,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/c-%E7%AC%AC%E5%85%AD%E5%A4%A9/">C&#43;&#43;第六天</a>
+            <a href="/p/c-%E7%B1%BB%E5%88%9D%E8%AF%86%E5%88%AB/">c&#43;&#43;类初识别</a>
         </h2>
     
         
@@ -343,9 +349,19 @@
     <section class="article-content">
     
     
-    <h1 id="continue的用法">continue的用法
-</h1><p>跳过当前循环，执行下一个循环</p>
-<p>例如，可以用continue来筛选我们想要的输入</p>
+    <h1 id="类的学习">类的学习
+</h1><p>类的接口就是我们对类成员的一系列操作</p>
+<h2 id="定义成员函数">定义成员函数
+</h2><h3 id="引入this">引入this
+</h3><p>当我们调用类对象的成员函数时，编译器会将隐式指针指向调用成员函数的对象，这样我们就可以在函数体内直接使用成员对象。</p>
+<p>比如std：：string isbn() const {return bookNo};</p>
+<p>v1.isbn(),这里就相当于isbn（&amp;v1），所以bookNo也就是v1的成员</p>
+<h3 id="const成员函数">const成员函数
+</h3><p>适用于只读取而不修改成员的函数，就是在参数列表后面加上const</p>
+<h3 id="在类外部定义成员函数">在类外部定义成员函数
+</h3><p>先写返回类型，再写作用域，然后写·函数；</p>
+<h3 id="定义一个返回this对象的函数">定义一个返回this对象的函数
+</h3><p>重点是返回类型，大多都是返回引用类型，比如sales_data中的combine，类似+=，返回左值就是引用类型。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -354,186 +370,18 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">string</span> <span class="n">str</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">str</span><span class="o">&amp;&amp;!</span><span class="n">str</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">Sales_data</span><span class="o">&amp;</span> <span class="n">Sales_data</span><span class="o">::</span><span class="n">combine</span><span class="p">(</span><span class="k">const</span> <span class="n">Sales_data</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!=</span><span class="sc">&#39;\n&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">continue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">units_sold</span><span class="o">+=</span><span class="n">rhs</span><span class="p">.</span><span class="n">units_sold</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">*</span><span class="k">this</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">v1</span><span class="p">.</span><span class="n">combine</span><span class="p">(</span><span class="n">v2</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>只读取以n开头的单词</p>
-<h1 id="函数传引用参数">函数传引用参数
-</h1><p>传引用参数可以改变输入对象的值，并且不用&amp;，并且使用引用可以避免拷贝，只读只需要设为const就行</p>
-<p>在传递参数时，如果没有改变实参的要求，尽量使用常量引用，因为常量引用收纳的实参范围更加广，能后接受普通变量以及常量；</p>
-<h1 id="函数如何传递一维数组">函数如何传递一维数组
-</h1><p>函数传递一维数组本身就是 传递指向首元素的指针</p>
-<ol>
-<li>
-<p>使用标记来传递数组，适用于数组中末尾有明显不同于其他元素的元素，例如数组存放str，末尾是\0</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="p">(</span><span class="o">*</span><span class="n">cp</span><span class="p">)</span><span class="c1">//可以利用末尾的\0来控制访问
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">cout</span><span class="o">&lt;&lt;*</span><span class="n">cp</span><span class="o">++&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><em><strong>使用标准库函数,因为数组没有迭代器</strong></em></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">cont</span> <span class="kt">int</span> <span class="o">*</span><span class="n">beg</span><span class="p">,</span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">end</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">print</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">v1</span><span class="p">),</span><span class="n">end</span><span class="p">(</span><span class="n">v1</span><span class="p">));</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p>在函数中显示的指出数组大小，<em><strong>大小可以用end()-begin()计算</strong></em></p>
-</li>
-<li>
-<p>同样刻意引用数组，但是有局限性，引用什么维度的数组，实参就必须维度相同</p>
-</li>
-</ol>
-<h1 id="还有可变形参的的函数">还有可变形参的的函数
-</h1><p>我们想要这样一类函数，它的形参的数量是可变的，这样就可以根据条件灵活使用，根据形参的类型是否相同，分为两种，我们先学相同的，即使用initializer_list类，要包含头文件（同名）</p>
-<p>initializer就相当于表示某种特定类型的数组，区别就是元素是常量,无法改变</p>
-<h2 id="可提供的操作">可提供的操作
-</h2><ol>
-<li>
-<p>initializer_list<int> l;表示一个int类型元素的空列表</p>
-</li>
-<li>
-<p>初始化：initilizer····l{a,b,c}</p>
-</li>
-<li>
-<p>l.size</p>
-</li>
-<li>
-<p>l.end</p>
-</li>
-<li>
-<p>l.begin</p>
-</li>
-</ol>
-<h2 id="传递值的序列">传递值的序列
-</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;initializer_list&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">Calculate</span><span class="p">(</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">l1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">Calculate</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">})</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span><span class="c1">//调用函数传递参数的序列时，正常大括号，还要加上中括号
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">Calculate</span><span class="p">(</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">l1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">sum</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span><span class="p">:</span><span class="n">l1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">sum</span><span class="o">+=</span><span class="n">i</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;sum is &#34;</span><span class="o">&lt;&lt;</span><span class="n">sum</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="返回类型与重载函数">返回类型与重载函数
-</h1><p>1.返回一个数组指针</p>
-<p>可以使用using来简化操作</p>
-<p>比如using arr=int [10]，arr *func(int i),表示返回的是一个指向数组的指针</p>
-<p>2.重载函数就是同名但形参列表不同</p>
-<h1 id="默认实参的使用">默认实参的使用
-</h1><p>使用默认实参只需要一开始声明一次然后就不用再重复声明</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s1</span><span class="p">,</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">end</span><span class="o">=</span><span class="s">&#34;s&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">&#34;sucess&#34;</span><span class="p">,</span><span class="s">&#34;es&#34;</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">Add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s">&#34;failure&#34;</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="nf">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s1</span><span class="p">,</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">end</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="n">s1</span><span class="o">+</span><span class="nl">end</span><span class="p">:</span><span class="n">s1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//在函数声明和定义中，只在一处指定默认值，避免代码冗余。
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div>
+</div><p>这里units_sold是v1的，this指向v1，rhs表示v2；返回v1的引用</p>
+
 </section>
 
 

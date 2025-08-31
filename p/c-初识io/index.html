@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="类的学习 类的接口就是我们对类成员的一系列操作\n定义成员函数 引入this 当我们调用类对象的成员函数时，编译器会将隐式指针指向调用成员函数的对象，这样我们就可以在函数体内直接使用成员对象。\n">
-<title>C&#43;&#43;第七天</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="IO类 分类 标准io，就是从键盘读数据，在屏幕显示数据，如cin，cerr，cout 文件io（ifstream，ofstrem）从文件读写 stringio：从内存中直接读写数据 简介 其中istream，和ostream是相当于int的一个类型，用它来定义一个流对象，比如cin就是istream的一个对象\n">
+<title>c&#43;&#43;初识IO</title>
 
-<link rel='canonical' href='https://qjy517.github.io/p/c-%E7%AC%AC%E4%B8%83%E5%A4%A9/'>
+<link rel='canonical' href='https://qjy517.github.io/p/c-%E5%88%9D%E8%AF%86io/'>
 
-<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="C++第七天">
-<meta property='og:description' content="类的学习 类的接口就是我们对类成员的一系列操作\n定义成员函数 引入this 当我们调用类对象的成员函数时，编译器会将隐式指针指向调用成员函数的对象，这样我们就可以在函数体内直接使用成员对象。\n">
-<meta property='og:url' content='https://qjy517.github.io/p/c-%E7%AC%AC%E4%B8%83%E5%A4%A9/'>
+<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="c++初识IO">
+<meta property='og:description' content="IO类 分类 标准io，就是从键盘读数据，在屏幕显示数据，如cin，cerr，cout 文件io（ifstream，ofstrem）从文件读写 stringio：从内存中直接读写数据 简介 其中istream，和ostream是相当于int的一个类型，用它来定义一个流对象，比如cin就是istream的一个对象\n">
+<meta property='og:url' content='https://qjy517.github.io/p/c-%E5%88%9D%E8%AF%86io/'>
 <meta property='og:site_name' content='请加油-qjy'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-29T22:30:11&#43;08:00'/><meta property='article:modified_time' content='2025-07-29T22:30:11&#43;08:00'/>
-<meta name="twitter:title" content="C++第七天">
-<meta name="twitter:description" content="类的学习 类的接口就是我们对类成员的一系列操作\n定义成员函数 引入this 当我们调用类对象的成员函数时，编译器会将隐式指针指向调用成员函数的对象，这样我们就可以在函数体内直接使用成员对象。\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-08-05T20:30:42&#43;08:00'/><meta property='article:modified_time' content='2025-08-05T20:30:42&#43;08:00'/>
+<meta name="twitter:title" content="c++初识IO">
+<meta name="twitter:description" content="IO类 分类 标准io，就是从键盘读数据，在屏幕显示数据，如cin，cerr，cout 文件io（ifstream，ofstrem）从文件读写 stringio：从内存中直接读写数据 简介 其中istream，和ostream是相当于int的一个类型，用它来定义一个流对象，比如cin就是istream的一个对象\n">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -284,14 +284,10 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#定义成员函数">定义成员函数</a>
-      <ol>
-        <li><a href="#引入this">引入this</a></li>
-        <li><a href="#const成员函数">const成员函数</a></li>
-        <li><a href="#在类外部定义成员函数">在类外部定义成员函数</a></li>
-        <li><a href="#定义一个返回this对象的函数">定义一个返回this对象的函数</a></li>
-      </ol>
-    </li>
+    <li><a href="#分类">分类</a></li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#io对象的条件状态">io对象的条件状态</a></li>
+    <li><a href="#管理流的状态">管理流的状态</a></li>
   </ol>
 </nav>
         </div>
@@ -311,7 +307,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/c-%E7%AC%AC%E4%B8%83%E5%A4%A9/">C&#43;&#43;第七天</a>
+            <a href="/p/c-%E5%88%9D%E8%AF%86io/">c&#43;&#43;初识IO</a>
         </h2>
     
         
@@ -333,7 +329,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-07-29</time>
+                <time class="article-time--published">2025-08-05</time>
             </div>
         
 
@@ -349,39 +345,90 @@
     <section class="article-content">
     
     
-    <h1 id="类的学习">类的学习
-</h1><p>类的接口就是我们对类成员的一系列操作</p>
-<h2 id="定义成员函数">定义成员函数
-</h2><h3 id="引入this">引入this
-</h3><p>当我们调用类对象的成员函数时，编译器会将隐式指针指向调用成员函数的对象，这样我们就可以在函数体内直接使用成员对象。</p>
-<p>比如std：：string isbn() const {return bookNo};</p>
-<p>v1.isbn(),这里就相当于isbn（&amp;v1），所以bookNo也就是v1的成员</p>
-<h3 id="const成员函数">const成员函数
-</h3><p>适用于只读取而不修改成员的函数，就是在参数列表后面加上const</p>
-<h3 id="在类外部定义成员函数">在类外部定义成员函数
-</h3><p>先写返回类型，再写作用域，然后写·函数；</p>
-<h3 id="定义一个返回this对象的函数">定义一个返回this对象的函数
-</h3><p>重点是返回类型，大多都是返回引用类型，比如sales_data中的combine，类似+=，返回左值就是引用类型。</p>
-<div class="highlight"><div class="chroma">
+    <h1 id="io类">IO类
+</h1><h2 id="分类">分类
+</h2><ol>
+<li>标准io，就是从键盘读数据，在屏幕显示数据，如cin，cerr，cout</li>
+<li>文件io（ifstream，ofstrem）从文件读写</li>
+<li>stringio：从内存中直接读写数据</li>
+</ol>
+<h2 id="简介">简介
+</h2><p>其中istream，和ostream是相当于int的一个类型，用它来定义一个流对象，比如cin就是istream的一个对象</p>
+<p>要注意的是，<em><strong>io对象</strong></em>不能够拷贝或者赋值，所以在函数中不能够返回io对象，但可以返回它的引用。</p>
+<h2 id="io对象的条件状态">io对象的条件状态
+</h2><p>有几个内置的类型表示流的一种状态，当流的状态发生改变时，其内置类型就会自动改变，当然配套的函数可以帮助我们来查询流的状态</p>
+<p>流的内置类型：</p>
+<ol>
+<li>strm::iostate ,提供了表达条件状态的完整功能。</li>
+<li>strm::badbit ,用来指出流已经崩溃</li>
+<li>strm:: failbit 用来指出一个io<strong>操作</strong>失败了</li>
+<li>strm:: eofbit 用来指出流已经到达了文件结束</li>
+<li>strm::goodbit 表示流未处于错误状态，返回为0；</li>
+</ol>
+<p>函数：</p>
+<ol>
+<li>s.eof() 若流s的到达文件末尾，流的eofbit置位，返回true</li>
+<li>s.fail() 若流failbit或者badbit置位，返回true</li>
+<li>s.good()若流处于有效状态，返回true</li>
+<li>s.clear() 将流s所有状态置位，最后流s处于有效状态</li>
+<li>s.setstate(flag)，将流中对应状态改为flag，flag为iostate类型。</li>
+<li>s.rdstate()返回流当前的状态，返回类型为strm::iostate</li>
+</ol>
+<p>总结：使用good和fail是确定流总体状态的正确方法。</p>
+<h2 id="管理流的状态">管理流的状态
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">Sales_data</span><span class="o">&amp;</span> <span class="n">Sales_data</span><span class="o">::</span><span class="n">combine</span><span class="p">(</span><span class="k">const</span> <span class="n">Sales_data</span> <span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">old_state</span><span class="o">=</span><span class="n">cin</span><span class="p">.</span><span class="n">rdstate</span><span class="p">();</span><span class="c1">//保留cin的原状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cin</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="c1">//使cin有效
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">process_input</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span><span class="c1">//使用cin
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cin</span><span class="p">.</span><span class="n">setstate</span><span class="p">(</span><span class="n">old_state</span><span class="p">);</span><span class="c1">//将cin置于原状态
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">istream</span> <span class="o">&amp;</span> <span class="n">get</span><span class="p">(</span><span class="n">istream</span> <span class="o">&amp;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="n">units_sold</span><span class="o">+=</span><span class="n">rhs</span><span class="p">.</span><span class="n">units_sold</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">*</span><span class="k">this</span>
+</span></span><span class="line"><span class="cl">	<span class="n">istream</span> <span class="o">&amp;</span><span class="n">is</span><span class="o">=</span><span class="n">get</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">is</span><span class="p">.</span><span class="n">rdstate</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="n">v1</span><span class="p">.</span><span class="n">combine</span><span class="p">(</span><span class="n">v2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">istream</span> <span class="o">&amp;</span><span class="n">get</span><span class="p">(</span><span class="n">istream</span> <span class="o">&amp;</span><span class="n">is</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">string</span> <span class="n">buf</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">is</span><span class="o">&gt;&gt;</span><span class="n">buf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">buf</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">is</span><span class="p">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这里units_sold是v1的，this指向v1，rhs表示v2；返回v1的引用</p>
-
+</div>
 </section>
 
 
