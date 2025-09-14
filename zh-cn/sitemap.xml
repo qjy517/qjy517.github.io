@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://qjy517.github.io/</loc>
-    <lastmod>2025-09-02T19:24:54+08:00</lastmod>
+    <lastmod>2025-09-11T18:20:10+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://qjy517.github.io/post/</loc>
-    <lastmod>2025-09-02T19:24:54+08:00</lastmod>
+    <lastmod>2025-09-11T18:20:10+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -27,6 +27,12 @@
                 hreflang="zh-cn"
                 href="https://qjy517.github.io/post/"
                 />
+  </url><url>
+    <loc>https://qjy517.github.io/p/%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E5%9B%9B%E4%BD%8D%E8%BF%90%E7%AE%97%E5%99%A8/</loc>
+    <lastmod>2025-09-11T18:20:10+08:00</lastmod>
+  </url><url>
+    <loc>https://qjy517.github.io/p/%E9%93%BE%E8%A1%A8%E9%A2%98%E8%A7%A3/</loc>
+    <lastmod>2025-09-08T18:27:17+08:00</lastmod>
   </url><url>
     <loc>https://qjy517.github.io/p/%E5%A4%9A%E6%80%81%E5%8F%8A%E5%85%B6%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2025-09-02T19:24:54+08:00</lastmod>

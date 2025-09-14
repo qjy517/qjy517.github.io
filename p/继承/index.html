@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://qjy517.github.io/p/%E7%BB%A7%E6%89%BF/'>
 
-<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="继承">
+<link rel="stylesheet" href="/scss/style.min.796866bf3c38218f65dd6e38450a0f85e0e493128526638ea3f4d96ab6f11c1e.css"><meta property='og:title' content="继承">
 <meta property='og:description' content="继承 继承语法和继承权限问题 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 #include &lt;iostream&gt; using namespace std; class Base { public: int m_a; Base(int x,int y,int z) { m_a=x; m_b=y; m_c=z; } protected: int m_b; private: int m_c; }; class Son:public Base//继承的语法规则 { int m_d; void test() { m_a=19; m_b=12; //m_c=14;//public继承Base类，相当于原样继承，也就是在Base中，成员权限不变，还是public，protected，private，所以 //m_c仍然无法直接访问 //protected继承，则除基类中，除了private，其他变为protected //private继承,则基类中成员全为private } }; 总结：\n">
 <meta property='og:url' content='https://qjy517.github.io/p/%E7%BB%A7%E6%89%BF/'>
 <meta property='og:site_name' content='请加油-qjy'>

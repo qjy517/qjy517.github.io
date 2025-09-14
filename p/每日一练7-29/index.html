@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://qjy517.github.io/p/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%BB%837-29/'>
 
-<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="每日一练7 29">
+<link rel="stylesheet" href="/scss/style.min.796866bf3c38218f65dd6e38450a0f85e0e493128526638ea3f4d96ab6f11c1e.css"><meta property='og:title' content="每日一练7 29">
 <meta property='og:description' content="每日一练 求取最大公约数与最小公倍数 辗转相除法，就是用较大数除以较小数，然后再用除数除以余数，再用除数除以余数，直至余数为0；\n最小公倍数就是其乘积除以最大公约数\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 #include &lt;iostream&gt; using namespace std; int Result(int a,int b); int main() { int a,int b; cin&gt;&gt;a&gt;&gt;b; cout&lt;&lt;&#34;最大公约数是：&#34;&lt;&lt;Result(a,b)&lt;&lt;endl; cout&lt;&lt;&#34;最小公倍数是：&#34;&lt;&lt;a*b/Result(a,b)&lt;&lt;endl; return 0; } int Result(int a,int b) { if(b==0) { return 0; } else { return Result(b,a%b); } } 递归求aaaaa 法一：递归\n">
 <meta property='og:url' content='https://qjy517.github.io/p/%E6%AF%8F%E6%97%A5%E4%B8%80%E7%BB%837-29/'>
 <meta property='og:site_name' content='请加油-qjy'>

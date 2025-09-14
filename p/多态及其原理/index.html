@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://qjy517.github.io/p/%E5%A4%9A%E6%80%81%E5%8F%8A%E5%85%B6%E5%8E%9F%E7%90%86/'>
 
-<link rel="stylesheet" href="/scss/style.min.69a264e5389f146b0472a107851df50846f70a68b50753d8ad4f41352b535a4b.css"><meta property='og:title' content="多态及其原理">
+<link rel="stylesheet" href="/scss/style.min.796866bf3c38218f65dd6e38450a0f85e0e493128526638ea3f4d96ab6f11c1e.css"><meta property='og:title' content="多态及其原理">
 <meta property='og:description' content="多态及原理 静态绑定 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 #include &lt;iostream&gt; using namespace std; //有关于虚函数以及静态绑定和动态绑定 class Animal { public: void speak() { cout&lt;&lt;&#34;动物在说话&#34;&lt;&lt;endl; } }; class Cat:public Animal { public: void speak() { cout&lt;&lt;&#34;小猫喵喵叫&#34;&lt;&lt;endl; } }; class Dog:public Animal { public: void speak() { cout&lt;&lt;&#34;小狗汪汪叫&#34;&lt;&lt;endl; } }; void dospeak(Animal &amp; animal)//允许父类对象的引用来绑定子类对象 { animal.speak();//这是一个静态绑定，是在编译时就确定了调用哪个类中的speak，因为参数是Animal，所以语句被翻译为 //Animal::speak() //我们想要调用传入实参的speak就要使用动态绑定，即虚函数 } int main() { Cat c; dospeak(c);//静态绑定，输出动物在说话 return 0; } 静态绑定在编译前就确定了调用哪个作用域下的speak，不会自动根据实参来识别调用哪个，除非显示的写出作用域(这是继承知识中同名成员的调用，不属于多态)\n">
 <meta property='og:url' content='https://qjy517.github.io/p/%E5%A4%9A%E6%80%81%E5%8F%8A%E5%85%B6%E5%8E%9F%E7%90%86/'>
 <meta property='og:site_name' content='请加油-qjy'>
