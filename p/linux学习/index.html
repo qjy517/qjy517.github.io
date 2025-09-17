@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Linux学习 路线大纲 基础篇 基础知识掌握 三种网络连接关系 主机与虚拟机的关系\n网络连接的三种方式\n简述：\n背景：有一个教室网络上，有三台学生的主机，并分别有网络IP，其中192.168.表示在同一个网段，为教室网络\n">
+<title>Linux学习</title>
+
+<link rel='canonical' href='https://qjy517.github.io/p/linux%E5%AD%A6%E4%B9%A0/'>
+
+<link rel="stylesheet" href="/scss/style.min.796866bf3c38218f65dd6e38450a0f85e0e493128526638ea3f4d96ab6f11c1e.css"><meta property='og:title' content="Linux学习">
+<meta property='og:description' content="Linux学习 路线大纲 基础篇 基础知识掌握 三种网络连接关系 主机与虚拟机的关系\n网络连接的三种方式\n简述：\n背景：有一个教室网络上，有三台学生的主机，并分别有网络IP，其中192.168.表示在同一个网段，为教室网络\n">
+<meta property='og:url' content='https://qjy517.github.io/p/linux%E5%AD%A6%E4%B9%A0/'>
+<meta property='og:site_name' content='请加油-qjy'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-09-17T23:25:46&#43;08:00'/><meta property='article:modified_time' content='2025-09-17T23:25:46&#43;08:00'/>
+<meta name="twitter:title" content="Linux学习">
+<meta name="twitter:description" content="Linux学习 路线大纲 基础篇 基础知识掌握 三种网络连接关系 主机与虚拟机的关系\n网络连接的三种方式\n简述：\n背景：有一个教室网络上，有三台学生的主机，并分别有网络IP，其中192.168.表示在同一个网段，为教室网络\n">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_b2233702304bd991.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🫡</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">请加油-qjy</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://wx.mail.qq.com/home/index'
+                        target="_blank"
+                        title="qq mail"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://qjy517.github.io/en/" >English</option>
+                                
+                                    <option value="https://qjy517.github.io/" selected>简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#路线大纲">路线大纲</a></li>
+    <li><a href="#基础篇">基础篇</a>
+      <ol>
+        <li><a href="#基础知识掌握">基础知识掌握</a>
+          <ol>
+            <li><a href="#三种网络连接关系">三种网络连接关系</a></li>
+            <li><a href="#虚拟机克隆">虚拟机克隆</a></li>
+            <li><a href="#虚拟机快照">虚拟机快照</a></li>
+            <li><a href="#vmtools的下载">vmtools的下载</a></li>
+            <li><a href="#目录结构介绍">目录结构介绍</a></li>
+            <li><a href="#远程登录和文件传输">远程登录和文件传输</a></li>
+            <li><a href="#vim快速入门">vim快速入门</a></li>
+            <li><a href="#关机重启只在远程登录使用在图形化界面不使用">关机重启（只在远程登录使用，在图形化界面不使用）</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/linux%E5%AD%A6%E4%B9%A0/">Linux学习</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-09-17</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="linux学习">Linux学习
+</h1><h2 id="路线大纲">路线大纲
+</h2><p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509172326327.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250912222113583"
+	
+	
+></p>
+<h2 id="基础篇">基础篇
+</h2><h3 id="基础知识掌握">基础知识掌握
+</h3><h4 id="三种网络连接关系">三种网络连接关系
+</h4><ol>
+<li>
+<p>主机与虚拟机的关系</p>
+<p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509151506247.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250915150602196"
+	
+	
+></p>
+</li>
+<li>
+<p>网络连接的三种方式</p>
+<p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509151506295.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250915150656211"
+	
+	
+></p>
+</li>
+</ol>
+<p>简述：</p>
+<p>背景：有一个教室网络上，有三台学生的主机，并分别有网络IP，其中192.168.表示在同一个网段，为教室网络</p>
+<ol>
+<li>
+<p>桥接模式：就是在许虚拟机下也生成一个这个网段的IP，那么这个虚拟机就可以和这个网段上的其他人通信</p>
+<p>但是，每个网段上可以分配的IP地址是有限的</p>
+</li>
+<li>
+<p>NAT模式：就是生成一个不是这个网段的IP，同时在主机上生成一个与虚拟机同一个网段的IP，然后虚拟机通过主机网段的代理，来实现对教室网段用户的访问，不限制IP数量，但是其他用户访问不到改虚拟机，因为他是通过代理方式</p>
+</li>
+<li>
+<p>主机模式：就是重新的一个独立的系统</p>
+</li>
+</ol>
+<h4 id="虚拟机克隆">虚拟机克隆
+</h4><ol>
+<li>将虚拟机文件拷贝重新拷贝一份，然后用vm打开</li>
+<li>利用vm自带的克隆操作，克隆一份一模一样的虚拟机。</li>
+</ol>
+<h4 id="虚拟机快照">虚拟机快照
+</h4><p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509151530379.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250915153000025"
+	
+	
+></p>
+<p>适用当我们的下一步操作有风向时，保存快照可以快速恢复当正常模式</p>
+<h4 id="vmtools的下载">vmtools的下载
+</h4><p>一般最新的vmware会自动安装，不需要下载</p>
+<p>共享文件夹的概念：两种操作系统可以对同一个文件夹进行操作</p>
+<p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509161930961.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250916193002876"
+	
+	
+></p>
+<h4 id="目录结构介绍">目录结构介绍
+</h4><p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509161950813.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250916195053562"
+	
+	
+></p>
+<p>具体的目录结构（必须了解）</p>
+<ol>
+<li>/bin【常用】，（usr/bin,usr/local/bin）这个目录下保存的时一些常用的指令，比如说cd等</li>
+<li>/sbin,s就是super user的意思，表示的是一种更高权限的指令，一般只有管理员使用</li>
+<li>/home【常用】，用来存放创建的普通用户的信息，以用户名字创建一个文件夹的方式存储</li>
+<li>/root【常用】,称为超级权限者目录，用于管理管理人员的目录</li>
+<li>/lib，存放的一些动态链接库，就是有的程序要用的这些库，就要使用/lib的文件</li>
+<li>/lost+found，用于存放系统非法关机时的文件</li>
+<li>/ect【常用】，用于管理系统以及一些库的配置文件</li>
+<li>/usr【常用】，用于存放用户的一些文件和程序，类似于window的program files文件</li>
+<li>/boot【常用】，存放链接系统镜像文件的文件，对与系统的启用至关重要</li>
+<li>/proc，**【不能动】**存放的是对系统内存映射的文件，访问这个目录，可以获取系统信息</li>
+<li>/srv，**【不能动】**存放的是一些服务启动后需要提取的数据</li>
+<li>/sys，**【不能动】**存放内核的一些文件</li>
+<li>/tmp，存放临时文件</li>
+<li>/dev，相当于window的设备管理器，存放的是虚拟机的硬件映射</li>
+<li>/media，【常用】，用来存放一些文件，他可以识别外部存储器，比如u盘，光驱，识别后，系统将识别到的设备<strong>挂载</strong>到该目录下</li>
+<li>/mnt，这是系统让用户临时挂载别的文件所创立的，通过<strong>挂载</strong>，用户可以访问挂载的内容</li>
+<li>/opt，这是系统额外安装软件的目录，记住这是软件的安装软件不是软件本身，<strong>尽管不是必须要把安装软件安装到这个目录，但是这是约定俗成的，便于多用户对其的管理</strong></li>
+<li>/usr/local，【常用】这是另一个给用户额外安装软件时的目录，通常是用编译源码的方式安装的软件</li>
+<li>/var，存放的是不断扩充的东西，比如说系统日志每次都更新增加</li>
+</ol>
+<h4 id="远程登录和文件传输">远程登录和文件传输
+</h4><p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509172326372.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250917221236746"
+	
+	
+></p>
+<h4 id="vim快速入门">vim快速入门
+</h4><p>简介：vim就是一个文本编辑器，它支持代码编辑的高亮等，<strong>一定要掌握基础用法</strong></p>
+<p>基础操作：（可以zaixshell远程进行操作）</p>
+<ol>
+<li>
+<p>创建一个文件：vim+文件及扩展名</p>
+</li>
+<li>
+<p>vim的三种编辑模式：</p>
+<ol>
+<li>一般模式：不能进行写，但可进行一些基本操作，如拷贝，粘贴，删除等</li>
+<li>插入模式：可以对文本进行编辑插入等，进入方法：一般模式输入i</li>
+<li>命令行模式：可以用一些命令对文本进行操作，如：保存文件，退出等，进入方法：在一般模式下输入/或：</li>
+</ol>
+</li>
+<li>
+<p>图示:</p>
+<p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509172220616.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250917222059500"
+	
+	
+></p>
+</li>
+</ol>
+<p>基础快捷编辑键：</p>
+<ol>
+<li>拷贝行：yy，xyy，其中x表示一个数字是从光标出向下拷贝几行，<strong>只在一般模式使用</strong></li>
+<li>粘贴：p，<strong>只在一般模式使用</strong></li>
+<li>删除：dd，同样有xdd，<strong>只在一般模式使用</strong></li>
+<li>类似于windows文本编辑器中的回退：u，还原之前的操作</li>
+<li>快速定位到文本的最后一行和首行：是G，gg,<strong>一般模式</strong></li>
+<li>移动多行的光标：移动的行数+shift+g，</li>
+</ol>
+<p>扩展快捷键：</p>
+<p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509172237105.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250917223733014"
+	
+	
+></p>
+<h4 id="关机重启只在远程登录使用在图形化界面不使用">关机重启（只在远程登录使用，在图形化界面不使用）
+</h4><p>命令：</p>
+<ol>
+<li>shutdown -h now：立刻关机</li>
+<li>shutdown -h 1:一分钟后关机</li>
+<li>shutdown -r now：重启</li>
+<li>halt：关机作用和上面相同</li>
+<li>reboot：重新启动计算机</li>
+<li>sync：把内存数据同步到磁盘(防止写一个文件时，在关机前使用sync就会保存这个文件而不丢失)</li>
+</ol>
+<p>细节：</p>
+<p><img src="https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509172307177.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250917230736110"
+	
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 请加油-qjy
+    </section>
+    
+    <section class="powerby">
+        
+            12024242196@qq.com <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

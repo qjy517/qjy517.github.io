@@ -7,7 +7,216 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>请加油-qjy</copyright>
-        <lastBuildDate>Thu, 11 Sep 2025 18:20:10 +0800</lastBuildDate><atom:link href="https://qjy517.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 17 Sep 2025 23:25:46 +0800</lastBuildDate><atom:link href="https://qjy517.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux学习</title>
+        <link>https://qjy517.github.io/p/linux%E5%AD%A6%E4%B9%A0/</link>
+        <pubDate>Wed, 17 Sep 2025 23:25:46 +0800</pubDate>
+        
+        <guid>https://qjy517.github.io/p/linux%E5%AD%A6%E4%B9%A0/</guid>
+        <description>&lt;h1 id=&#34;linux学习&#34;&gt;Linux学习
+&lt;/h1&gt;&lt;h2 id=&#34;路线大纲&#34;&gt;路线大纲
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509172326327.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250912222113583&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;基础篇&#34;&gt;基础篇
+&lt;/h2&gt;&lt;h3 id=&#34;基础知识掌握&#34;&gt;基础知识掌握
+&lt;/h3&gt;&lt;h4 id=&#34;三种网络连接关系&#34;&gt;三种网络连接关系
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;主机与虚拟机的关系&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509151506247.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250915150602196&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网络连接的三种方式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509151506295.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250915150656211&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;简述：&lt;/p&gt;
+&lt;p&gt;背景：有一个教室网络上，有三台学生的主机，并分别有网络IP，其中192.168.表示在同一个网段，为教室网络&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;桥接模式：就是在许虚拟机下也生成一个这个网段的IP，那么这个虚拟机就可以和这个网段上的其他人通信&lt;/p&gt;
+&lt;p&gt;但是，每个网段上可以分配的IP地址是有限的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NAT模式：就是生成一个不是这个网段的IP，同时在主机上生成一个与虚拟机同一个网段的IP，然后虚拟机通过主机网段的代理，来实现对教室网段用户的访问，不限制IP数量，但是其他用户访问不到改虚拟机，因为他是通过代理方式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;主机模式：就是重新的一个独立的系统&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;虚拟机克隆&#34;&gt;虚拟机克隆
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;将虚拟机文件拷贝重新拷贝一份，然后用vm打开&lt;/li&gt;
+&lt;li&gt;利用vm自带的克隆操作，克隆一份一模一样的虚拟机。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;虚拟机快照&#34;&gt;虚拟机快照
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509151530379.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250915153000025&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;适用当我们的下一步操作有风向时，保存快照可以快速恢复当正常模式&lt;/p&gt;
+&lt;h4 id=&#34;vmtools的下载&#34;&gt;vmtools的下载
+&lt;/h4&gt;&lt;p&gt;一般最新的vmware会自动安装，不需要下载&lt;/p&gt;
+&lt;p&gt;共享文件夹的概念：两种操作系统可以对同一个文件夹进行操作&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509161930961.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250916193002876&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;目录结构介绍&#34;&gt;目录结构介绍
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509161950813.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250916195053562&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;具体的目录结构（必须了解）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;/bin【常用】，（usr/bin,usr/local/bin）这个目录下保存的时一些常用的指令，比如说cd等&lt;/li&gt;
+&lt;li&gt;/sbin,s就是super user的意思，表示的是一种更高权限的指令，一般只有管理员使用&lt;/li&gt;
+&lt;li&gt;/home【常用】，用来存放创建的普通用户的信息，以用户名字创建一个文件夹的方式存储&lt;/li&gt;
+&lt;li&gt;/root【常用】,称为超级权限者目录，用于管理管理人员的目录&lt;/li&gt;
+&lt;li&gt;/lib，存放的一些动态链接库，就是有的程序要用的这些库，就要使用/lib的文件&lt;/li&gt;
+&lt;li&gt;/lost+found，用于存放系统非法关机时的文件&lt;/li&gt;
+&lt;li&gt;/ect【常用】，用于管理系统以及一些库的配置文件&lt;/li&gt;
+&lt;li&gt;/usr【常用】，用于存放用户的一些文件和程序，类似于window的program files文件&lt;/li&gt;
+&lt;li&gt;/boot【常用】，存放链接系统镜像文件的文件，对与系统的启用至关重要&lt;/li&gt;
+&lt;li&gt;/proc，**【不能动】**存放的是对系统内存映射的文件，访问这个目录，可以获取系统信息&lt;/li&gt;
+&lt;li&gt;/srv，**【不能动】**存放的是一些服务启动后需要提取的数据&lt;/li&gt;
+&lt;li&gt;/sys，**【不能动】**存放内核的一些文件&lt;/li&gt;
+&lt;li&gt;/tmp，存放临时文件&lt;/li&gt;
+&lt;li&gt;/dev，相当于window的设备管理器，存放的是虚拟机的硬件映射&lt;/li&gt;
+&lt;li&gt;/media，【常用】，用来存放一些文件，他可以识别外部存储器，比如u盘，光驱，识别后，系统将识别到的设备&lt;strong&gt;挂载&lt;/strong&gt;到该目录下&lt;/li&gt;
+&lt;li&gt;/mnt，这是系统让用户临时挂载别的文件所创立的，通过&lt;strong&gt;挂载&lt;/strong&gt;，用户可以访问挂载的内容&lt;/li&gt;
+&lt;li&gt;/opt，这是系统额外安装软件的目录，记住这是软件的安装软件不是软件本身，&lt;strong&gt;尽管不是必须要把安装软件安装到这个目录，但是这是约定俗成的，便于多用户对其的管理&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;/usr/local，【常用】这是另一个给用户额外安装软件时的目录，通常是用编译源码的方式安装的软件&lt;/li&gt;
+&lt;li&gt;/var，存放的是不断扩充的东西，比如说系统日志每次都更新增加&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;远程登录和文件传输&#34;&gt;远程登录和文件传输
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509172326372.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250917221236746&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;vim快速入门&#34;&gt;vim快速入门
+&lt;/h4&gt;&lt;p&gt;简介：vim就是一个文本编辑器，它支持代码编辑的高亮等，&lt;strong&gt;一定要掌握基础用法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;基础操作：（可以zaixshell远程进行操作）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建一个文件：vim+文件及扩展名&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vim的三种编辑模式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一般模式：不能进行写，但可进行一些基本操作，如拷贝，粘贴，删除等&lt;/li&gt;
+&lt;li&gt;插入模式：可以对文本进行编辑插入等，进入方法：一般模式输入i&lt;/li&gt;
+&lt;li&gt;命令行模式：可以用一些命令对文本进行操作，如：保存文件，退出等，进入方法：在一般模式下输入/或：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;图示:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509172220616.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250917222059500&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基础快捷编辑键：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;拷贝行：yy，xyy，其中x表示一个数字是从光标出向下拷贝几行，&lt;strong&gt;只在一般模式使用&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;粘贴：p，&lt;strong&gt;只在一般模式使用&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;删除：dd，同样有xdd，&lt;strong&gt;只在一般模式使用&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;类似于windows文本编辑器中的回退：u，还原之前的操作&lt;/li&gt;
+&lt;li&gt;快速定位到文本的最后一行和首行：是G，gg,&lt;strong&gt;一般模式&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;移动多行的光标：移动的行数+shift+g，&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;扩展快捷键：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509172237105.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250917223733014&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;关机重启只在远程登录使用在图形化界面不使用&#34;&gt;关机重启（只在远程登录使用，在图形化界面不使用）
+&lt;/h4&gt;&lt;p&gt;命令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;shutdown -h now：立刻关机&lt;/li&gt;
+&lt;li&gt;shutdown -h 1:一分钟后关机&lt;/li&gt;
+&lt;li&gt;shutdown -r now：重启&lt;/li&gt;
+&lt;li&gt;halt：关机作用和上面相同&lt;/li&gt;
+&lt;li&gt;reboot：重新启动计算机&lt;/li&gt;
+&lt;li&gt;sync：把内存数据同步到磁盘(防止写一个文件时，在关机前使用sync就会保存这个文件而不丢失)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;细节：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bucket-qjy.oss-cn-qingdao.aliyuncs.com/picture/202509172307177.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250917230736110&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>用栈实现四位运算器</title>
         <link>https://qjy517.github.io/p/%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E5%9B%9B%E4%BD%8D%E8%BF%90%E7%AE%97%E5%99%A8/</link>
         <pubDate>Thu, 11 Sep 2025 18:20:10 +0800</pubDate>
